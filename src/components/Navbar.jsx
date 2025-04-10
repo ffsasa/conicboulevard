@@ -1,28 +1,88 @@
-// src/components/Navbar.jsx
-import logo from "../assets/logo.png";
+import { useState, useEffect } from "react";
+import logo from "../assets/logo2.png";
 
 const Navbar = () => {
-    return (
-      <nav className="bg-transparent fixed w-full top-0 z-50 shadow-md">
-        <div className="w-full px-6 py-4 flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <img src={logo} alt="Logo" className="h-20 w-auto" />
-          </div>
+  const [activeSection, setActiveSection] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const menuItems = [
+    { id: "thongtin", label: "THÔNG TIN" },
+    { id: "vitri", label: "VỊ TRÍ" },
+    { id: "tienich", label: "TIỆN ÍCH" },
+    { id: "matbang", label: "MẶT BẰNG" },
+    { id: "tiendo", label: "TIẾN ĐỘ" },
+    { id: "giaban", label: "GIÁ BÁN" },
+  ];
+
+  // ✅ Xử lý scroll để đổi màu nền
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
   
-          {/* Menu trên desktop */}
-          <div className="hidden md:flex items-center space-x-6">
-            <a href="#thongtin" className="text-white hover:text-gold whitespace-nowrap transition duration-300">Thông tin</a>
-            <a href="#vitri" className="text-white hover:text-gold whitespace-nowrap transition duration-300">Vị trí</a>
-            <a href="#tienich" className="text-white hover:text-gold whitespace-nowrap transition duration-300">Tiện ích</a>
-            <a href="#matbang" className="text-white hover:text-gold whitespace-nowrap transition duration-300">Mặt bằng</a>
-            <a href="#tiendo" className="text-white hover:text-gold whitespace-nowrap transition duration-300">Tiến độ</a>
-            <a href="#giaban" className="text-white hover:text-gold whitespace-nowrap transition duration-300">Giá bán</a>
-          </div>
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ✅ Xử lý IntersectionObserver cho active menu
+  useEffect(() => {
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.6,
+    });
+
+    menuItems.forEach((item) => {
+      const section = document.getElementById(item.id);
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      menuItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  return (
+    <nav
+      className={`fixed w-full top-0 z-50 transition-colors duration-300 
+        ${isScrolled ? "bg-[#144c32]" : "bg-transparent"}`}
+    >
+      <div className="w-full px-10 py-3 flex items-center">
+        {/* Logo */}
+        <div className="flex-shrink-0">
+          <img src={logo} alt="Logo" className="h-20 w-auto" />
         </div>
-      </nav>
-    );
-  };
-  
-  export default Navbar;
-  
+
+        {/* Menu */}
+        <div className="hidden md:flex flex-1 justify-center items-center space-x-14 mt-2 pr-16">
+          {menuItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`text-xl font-sans whitespace-nowrap transition duration-300 ${
+                activeSection === item.id
+                  ? "text-luxurybronze underline underline-offset-8 decoration-1"
+                  : "text-white hover:text-luxurybronze hover:underline hover:underline-offset-8"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
