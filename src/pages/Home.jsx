@@ -6,8 +6,8 @@ const Home = () => {
     return (
       <>
         <div className="container mx-auto px-20">
-          <section id="thongtin" className="p-10">
-            <h2 className="text-4xl font-bold pb-1 text-black font-dancing">Thông tin dự án</h2>
+          <section id="thongtin" className="px-10 py-5">
+            <h2 className="text-4xl font-bold pb-1 text-black font-dancing">Tổng Quan Dự Án</h2>
             <h2 className="text-3xl font-bold pb-4 text-darkgreen">CONIC BOULEVARD</h2>
             
             <div className="flex flex-col md:flex-row gap-10">
@@ -53,46 +53,75 @@ const Home = () => {
                 />
               </div>
             </div>
+              <div className="w-full mt-8">
+                <img
+                  src="/promotion.jpg"
+                  alt="Thông tin khuyến mãi"
+                  className="w-full h-auto object-cover rounded-xl shadow-lg"
+                />
+              </div>
+              <RegisterForm />
           </section>
    
-          <section id="vitri" className="p-10">
+          <section id="vitri" className="px-10 py-5">
             <div className="flex flex-col md:flex-row gap-10">
-              {/* Hình ảnh bên trái */}
-              <div className="flex justify-center items-start">
+              {/* Hình ảnh bên trái với dòng chữ bên dưới */}
+              <div className="flex flex-col items-center justify-start">
                 <img
                   src="/vitri.jpg"
                   alt="Vị trí Conic Boulevard"
-                  className="shadow-lg w-full max-w-2xl object-cover"
+                  className="shadow-lg w-full max-w-3xl object-cover"
                 />
+                <p className="text-xl text-darkgreen font-dancing mt-3 text-center">
+                  ĐỦ GẦN PHỒN HOA - ĐỦ XA VỘI VÃ
+                </p>
               </div>
 
               {/* Văn bản bên phải canh giữa theo chiều cao */}
               <div className="flex-1 flex flex-col justify-center">
-                <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Vị trí vàng</h2>
+                <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Vị Trí Đắc Địa</h2>
+                <h1 className="text-2xl text-darkgreen font-dancing">Đủ gần</h1>
                 <p>
-                  Conic Boulevard tọa lạc tại đường Huỳnh Bá Chánh, xã Tân Kiên, huyện Bình Chánh, TP.HCM. 
-                  Dự án nằm liền kề giao điểm của tuyến Quốc lộ 1A và đại lộ Võ Văn Kiệt thuận tiện cho việc di chuyển đến các quận trung tâm thành phố.
+                  • Năm ngay nút giao Võ Văn Kiệt với Quốc Lộ 1A <br />
+                  • Kết nối Quận 5, 6, 1 qua Đại Lộ Võ Văn Kiệt. <br />
+                  • Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A. <br />
                 </p>
-                <p className="pt-4">
-                  Với vị trí chiến lược này, cư dân dễ dàng kết nối với các khu vực như Quận 5, 6, 1, khu đô thị Phú Mỹ Hưng, hay các tỉnh miền Tây thông qua cao tốc Trung Lương.
-                </p>                
-              </div>             
-            </div>
-            <RegisterForm />
-            <div className="flex flex-col md:flex-row gap-10 pt-10 items-center">
-              {/* Văn bản bên trái */}
-              <div className="w-[30%]">
-                <h3 className="text-4xl text-darkgreen font-dancing pb-2">
-                  Tâm điểm kết nối
-                </h3>
+                <h1 className="text-2xl text-darkgreen font-dancing pt-4">Đủ xa</h1>
                 <p>
-                  Bên cạnh đó, một loạt tuyến đường nghìn tỷ kết nối Bình Chánh với các tỉnh miền Tây 
-                  đã và đang thực hiện càng giúp cư dân rút ngắn thời gian di chuyển, tạo thông suốt trong giao thương.
+                  • Nằm biệt lập trong khu dân cư 584 đường Huỳnh Bá Chánh, xã Tân Kiên, Huyện Bình Chánh.
                 </p>
               </div>
-
-              {/* Video bên phải */}
-              <div className="w-[70%] w-full aspect-video">
+            </div>
+            <div className="flex flex-col md:flex-row gap-10 pt-10 items-center">
+              {/* Văn bản bên trái */}
+              <div className="w-[35%]">
+                <h3 className="text-4xl text-darkgreen font-dancing pb-2">
+                  Vị trí chiến lược, <br />
+                  đón đầu tương lai
+                </h3>
+                <p className="pb-2">
+                  Conic Boulevard toa lac kiêu hãnh tại khu Tây Nam TP.HCM, 
+                  đón đầu sự phát triển của khu vực thông qua hàng loạt dự án hạ tầng giao thông nghìn tỷ. 
+                  Đây không chỉ là nơi kết nối các tuyến giao thông trọng điểm mà còn là đầu mối thông thương liên vùng, 
+                  đảm bảo khả năng di chuyển thuận tiện trong khu vực và liên tỉnh.
+                </p>
+                <p className="pb-2">
+                  Đón đầu quy hoạch Bình Chánh - đầu mối quan trọng kết nối TP.HCM với các tỉnh ĐBSCL
+                </p>
+                <ul className="ml-2 list-disc pl-5">
+                  <li>Đón đầu các dự án hạ tầng giao thông trọng điểm: Metro 3A (Bến Thành – Tân Kiên), tuyến đường sắt cao tốc TP.HCM -Cần Thơ</li>
+                  <li>Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương -Rach Nước Lên</li>
+                </ul>
+              </div>
+              <div className="w-[65%] w-full">
+                <img
+                  src="/map.png"
+                  alt="Vị trí Conic Boulevard"
+                  className="shadow-lg w-full max-w-3xl object-cover"
+                />
+              </div>
+            </div>
+            <div className="pt-8 w-full aspect-video">
                 <iframe
                   className="w-full h-full rounded-xl shadow-lg"
                   src="https://www.youtube.com/embed/3TP5MNMq74U?start=6"
@@ -101,31 +130,30 @@ const Home = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
-              </div>
             </div>
           </section>
     
-          <section id="tienich" className="p-10">
+          <section id="tienich" className="px-10 py-5">
             <h2 className="text-2xl font-bold">Tiện ích</h2>
             <p>...</p>
           </section>
     
-          <section id="matbang" className="p-10">
+          <section id="matbang" className="px-10 py-5">
             <h2 className="text-2xl font-bold">Mặt bằng</h2>
             <p>...</p>
           </section>
     
-          <section id="tiendo" className="p-10">
+          <section id="tiendo" className="px-10 py-5">
             <h2 className="text-2xl font-bold">Tiến độ</h2>
             <p>...</p>
           </section>
     
-          <section id="giaban" className="p-10">
+          <section id="giaban" className="px-10 py-5">
             <h2 className="text-2xl font-bold">Giá bán</h2>
             <p>...</p>
           </section>
 
-          <section id="lienhe" className="p-10">
+          <section id="lienhe" className="px-10 py-5">
             <h2 className="text-2xl font-bold">Liên hệ</h2>
             <p>...</p>
           </section>

@@ -6,13 +6,13 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = [
-    { id: "thongtin", label: "THÔNG TIN" },
+    { id: "thongtin", label: "TỔNG QUAN" },
     { id: "vitri", label: "VỊ TRÍ" },
     { id: "tienich", label: "TIỆN ÍCH" },
     { id: "matbang", label: "MẶT BẰNG" },
     { id: "tiendo", label: "TIẾN ĐỘ" },
     { id: "giaban", label: "GIÁ BÁN" },
-    { id: "lienhe", label: "LIÊN HỆ" },
+    { id: "lienhe", label: "PTTT" },
   ];
 
   useEffect(() => {
@@ -25,25 +25,35 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const handleIntersect = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+    const visibleSections = new Map();
+  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibleSections.set(entry.target.id, entry.isIntersecting);
+        });
+  
+        const visible = [...visibleSections.entries()]
+          .filter(([_, isVisible]) => isVisible)
+          .map(([id]) => document.getElementById(id))
+          .filter(Boolean)
+          .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+  
+        if (visible.length > 0) {
+          setActiveSection(visible[0].id);
         }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersect, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.6,
-    });
-
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    );
+  
     menuItems.forEach((item) => {
       const section = document.getElementById(item.id);
       if (section) observer.observe(section);
     });
-
+  
     return () => {
       menuItems.forEach((item) => {
         const section = document.getElementById(item.id);
@@ -51,6 +61,7 @@ const Navbar = () => {
       });
     };
   }, []);
+  
 
   return (
     <nav
@@ -68,8 +79,8 @@ const Navbar = () => {
         </div>
 
         {/* Menu */}
-        <div className="hidden md:flex flex-1 justify-center items-center space-x-14 mt-2 pr-16">
-          {menuItems.map((item) => {
+        <div className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-9 xl:space-x-12 mt-2 pr-6">
+        {menuItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <a

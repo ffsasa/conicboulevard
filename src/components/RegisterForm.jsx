@@ -2,14 +2,12 @@ import { FaPaperPlane } from "react-icons/fa";
 
 export default function RegisterForm() {
   return (
-    <section className="bg-white bg-opacity-70 py-12 px-4" id="dangky">
+    <section className="bg-white bg-opacity-70 pt-12 pb-2 px-4" id="dangky">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-green-700 mb-2 pb-2">
-          ĐĂNG KÝ NHẬN THÔNG TIN
+        TƯ VẤN NHANH THÔNG TIN GIÁ BÁN <br />
+        CHÍNH SÁCH ƯU ĐÃI VÀ PTTT
         </h2>
-        <p className="text-gray-700 mb-8 max-w-xl mx-auto">
-          Nếu quan tâm hay cần tư vấn thông tin liên quan, Quý khách vui lòng điền nội dung theo form dưới, chúng tôi sẽ trả lời trong thời gian sớm nhất.
-        </p>
 
         <form className="space-y-4">
           <div className="flex flex-col md:flex-row gap-4">
