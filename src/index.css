@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes shake {
+  0%, 100% { transform: rotate(-45deg); }
+  20% { transform: rotate(-20deg); }
+  50% { transform: rotate(-60deg); }
+  80% { transform: rotate(-20deg); }
+}
+
+.animate-shake {
+  animation: shake 1s infinite ease-in-out;
+}
+
+.rotated-phone {
+  display: inline-block;
+}
 
 /* index.css */
 * {

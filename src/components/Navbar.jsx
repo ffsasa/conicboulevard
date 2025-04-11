@@ -12,19 +12,18 @@ const Navbar = () => {
     { id: "matbang", label: "MẶT BẰNG" },
     { id: "tiendo", label: "TIẾN ĐỘ" },
     { id: "giaban", label: "GIÁ BÁN" },
+    { id: "lienhe", label: "LIÊN HỆ" },
   ];
 
-  // ✅ Xử lý scroll để đổi màu nền
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Xử lý IntersectionObserver cho active menu
   useEffect(() => {
     const handleIntersect = (entries) => {
       entries.forEach((entry) => {
@@ -56,29 +55,39 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full top-0 z-50 transition-colors duration-300 
-        ${isScrolled ? "bg-[#144c32]" : "bg-transparent"}`}
+        ${isScrolled ? "bg-lightgrey-150" : "bg-transparent"}`}
     >
-      <div className="w-full px-10 py-3 flex items-center">
+      <div className="w-full px-10 py-2 flex items-center">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="h-20 w-auto" />
+          <img
+            src={logo}
+            alt="Logo"
+            className={`w-auto ${isScrolled ? "h-12" : "h-20"}`}
+          />
         </div>
 
         {/* Menu */}
         <div className="hidden md:flex flex-1 justify-center items-center space-x-14 mt-2 pr-16">
-          {menuItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`text-xl font-sans whitespace-nowrap transition duration-300 ${
-                activeSection === item.id
-                  ? "text-luxurybronze underline underline-offset-8 decoration-1"
-                  : "text-white hover:text-luxurybronze hover:underline hover:underline-offset-8"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`text-xl font-semibold font-sans whitespace-nowrap transition duration-300
+                  ${
+                    isActive
+                      ? "text-luxurybronze underline underline-offset-8 decoration-1"
+                      : isScrolled
+                      ? "text-green-900 hover:text-luxurybronze"
+                      : "text-white hover:text-luxurybronze"               
+                  } hover:underline hover:underline-offset-8`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </nav>
