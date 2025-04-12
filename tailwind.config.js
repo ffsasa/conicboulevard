@@ -26,6 +26,15 @@ export default {
         vibes: ['Great Vibes', 'cursive'],
         allura: ['Allura', 'cursive'],
       },
+      keyframes: {
+        pulseScale: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+        },
+      },
+      animation: {
+        pulseScale: 'pulseScale 1.5s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

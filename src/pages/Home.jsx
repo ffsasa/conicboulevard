@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
-import Hero from "../components/Hero";
 import RegisterForm from "../components/RegisterForm";
+import FloorSlider from "../components/FloorSlider"; 
 
 const Home = () => {
     return (
@@ -191,10 +191,80 @@ const Home = () => {
           </section>
     
           <section id="matbang" className="px-10 py-5">
-            <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Mặt bằng</h2>
-            <p>...</p>
+            <FloorSlider />
+            <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Thiết kế căn hộ hiện đại với diện tích lớn - sang trọng</h2>
+              <p className="pb-1">
+              Conic Boulevard thiết lập tiêu chuẩn sống đẳng cấp với những căn hộ diện tích lớn từ 84,32m2 đến 114m2, 
+              đáp ứng nhu cầu ngày càng cao về không gian sống rộng, thoáng giữa trung tâm thành phố. 
+              Trong bối cảnh “đất chật, người đông”, Conic Boulevard trở thành lựa chọn hiếm hoi mang 
+              lại sự thoải mái và tiện nghi cho gia đình nhiều thế hệ. 
+              </p>
+              <div className="w-full">
+                <img
+                  src="/mauab.jpg"
+                  alt="Mẫu căn hộ A và B"
+                  className="shadow-lg w-full object-cover"
+                />
+              </div>
+              <div className="w-full">
+                <img
+                  src="/maucd.jpg"
+                  alt="Mẫu căn hộ C và D"
+                  className="shadow-lg w-full object-cover"
+                />
+              </div>
+              <RegisterForm />
           </section>
-    
+
+          <section className="bg-white bg-opacity-70 px-4">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-center text-xl md:text-2xl font-semibold text-green-800 mb-6">
+                Đặc điểm nổi bật trong thiết kế căn hộ tại Conic Boulevard so với chung cư khác tại khu vực như:
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white font-medium">
+                <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
+                  Thiết kế 2 ban công, đối lưu không khí
+                </div>
+                <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
+                  Diện tích lớn, căn nhỏ nhất 84,6m2
+                </div>
+                <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
+                  Thiết kế căn 3PN linh động cho việc sử dụng
+                </div>
+                <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
+                  Tất cả các căn đều có ban công
+                </div>
+              </div>
+              <div className="pt-8 w-full aspect-video">
+                <iframe
+                  className="w-full h-full rounded-xl shadow-lg"
+                  src="https://www.youtube.com/embed/4rvx9gn-1UI"
+                  title="Video giới thiệu căn hộ"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <p className="text-sm italic text-gray-700 mt-4 text-center">
+                Video căn hộ 2 phòng ngủ diện tích 84,32 m2
+              </p>
+              <div className="pt-8 w-full aspect-video">
+                <iframe
+                  className="w-full h-full rounded-xl shadow-lg"
+                  src="https://www.youtube.com/embed/0Mc6heGCs2Q"
+                  title="Video giới thiệu căn hộ"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <p className="text-sm italic text-gray-700 mt-4 text-center">
+                Video căn hộ 3 phòng ngủ diện tích 114m2
+              </p>
+            </div>
+          </section>
+
           <section id="tiendo" className="px-10 py-5">
             <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Tiến độ</h2>
             <p>...</p>
