@@ -124,7 +124,7 @@ const Home = () => {
             <div className="pt-8 w-full aspect-video">
                 <iframe
                   className="w-full h-full rounded-xl shadow-lg"
-                  src="https://www.youtube.com/embed/3TP5MNMq74U?start=6"
+                  src="https://www.youtube.com/embed/7fXVvcROavY"
                   title="Video giới thiệu vị trí đắc địa"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
