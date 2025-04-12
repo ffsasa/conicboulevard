@@ -26,8 +26,8 @@ export default function RegisterForm() {
           </div>
 
           <textarea
-            rows="4"
-            placeholder="Nội dung"
+            rows="2"
+            placeholder="Mời Quý Khách chọn nhu cầu sản phẩm"
             className="w-full px-4 py-3 rounded-2xl bg-green-200 bg-opacity-50 placeholder-lightgrey-50 text-black focus:outline-none resize-none border border-green-400"
           ></textarea>
 

@@ -165,17 +165,8 @@ const Home = () => {
               />
             </div>
             <div className="w-[45%] w-full">
-              <h2 className="text-4xl text-darkgreen font-dancing">
-                Kết nối hoàn hảo, dẫn lối tiện nghi
-              </h2>
-              <p className="pb-1">
-                Conic Boulevard toa lac kiêu hãnh tại khu Tây Nam TP.HCM,
-                đón đầu sự phát triển của khu vực thông qua hàng loạt dự án hạ tầng giao thông nghìn tỷ.
-                Đây không chỉ là nơi kết nối các tuyến giao thông trọng điểm mà còn là đầu mối thông thương liên vùng,
-                đảm bảo khả năng di chuyển thuận tiện trong khu vực và liên tỉnh.
-              </p>
-              <h2 className="text-4xl text-luxurybronze font-allura pt-3">
-                Thời gian di chuyển đến các địa điểm trong khu vực.
+              <h2 className="text-4xl text-darkgreen font-dancing pb-3">
+                Thời gian di chuyển đến các tiện ích trong khu vực.
               </h2>
               <ul className="ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
                 <li className="hover:text-darkgreen transition duration-200">5 phút: đến bến xe miền tây mới</li>
@@ -322,6 +313,11 @@ const Home = () => {
 
         <section id="giaban" className="px-10 py-5">
           <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Giá bán</h2>
+          <p>...</p>
+        </section>
+
+        <section id="pttt" className="px-10 py-5">
+          <h2 className="text-4xl pb-4 text-darkgreen font-dancing">PTTT</h2>
           <p>...</p>
         </section>
 

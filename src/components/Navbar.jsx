@@ -12,7 +12,8 @@ const Navbar = () => {
     { id: "matbang", label: "MẶT BẰNG" },
     { id: "tiendo", label: "TIẾN ĐỘ" },
     { id: "giaban", label: "GIÁ BÁN" },
-    { id: "lienhe", label: "PTTT" },
+    { id: "pttt", label: "PTTT" },
+    { id: "lienhe", label: "LIÊN HỆ" },
   ];
 
   useEffect(() => {
