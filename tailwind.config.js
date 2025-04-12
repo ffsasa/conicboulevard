@@ -23,6 +23,8 @@ export default {
       },
       fontFamily: {
         dancing: ['"Dancing Script"', 'cursive'],
+        vibes: ['Great Vibes', 'cursive'],
+        allura: ['Allura', 'cursive'],
       },
     },
   },

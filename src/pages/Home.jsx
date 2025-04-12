@@ -64,9 +64,9 @@ const Home = () => {
           </section>
    
           <section id="vitri" className="px-10 py-5">
-            <div className="flex flex-col md:flex-row gap-10">
+            <div className="flex flex-col md:flex-row gap-10 items-center">
               {/* Hình ảnh bên trái với dòng chữ bên dưới */}
-              <div className="flex flex-col items-center justify-start">
+              <div className="w-[65%] w-full">
                 <img
                   src="/vitri.jpg"
                   alt="Vị trí Conic Boulevard"
@@ -78,7 +78,7 @@ const Home = () => {
               </div>
 
               {/* Văn bản bên phải canh giữa theo chiều cao */}
-              <div className="flex-1 flex flex-col justify-center">
+              <div className="w-[35%] w-full">
                 <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Vị Trí Đắc Địa</h2>
                 <h1 className="text-2xl text-darkgreen font-dancing">Đủ gần</h1>
                 <p>
@@ -94,7 +94,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col md:flex-row gap-10 pt-10 items-center">
               {/* Văn bản bên trái */}
-              <div className="w-[35%]">
+              <div className="w-[35%] w-full">
                 <h3 className="text-4xl text-darkgreen font-dancing pb-2">
                   Vị trí chiến lược, <br />
                   đón đầu tương lai
@@ -125,7 +125,7 @@ const Home = () => {
                 <iframe
                   className="w-full h-full rounded-xl shadow-lg"
                   src="https://www.youtube.com/embed/3TP5MNMq74U?start=6"
-                  title="YouTube video"
+                  title="Video giới thiệu vị trí đắc địa"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -134,27 +134,79 @@ const Home = () => {
           </section>
     
           <section id="tienich" className="px-10 py-5">
-            <h2 className="text-2xl font-bold">Tiện ích</h2>
-            <p>...</p>
+            <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Tiện ích nội khu</h2>
+            <div className="w-[100%] w-full">
+              <img
+                src="/tienich.jpg"
+                alt="Vị trí Conic Boulevard"
+                className="shadow-lg w-full object-cover"
+              />
+            </div>
+            <div className="pt-8 w-full aspect-video">
+              <iframe
+                className="w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/X_acjcDRyU8"
+                title="Video giới thiệu tiện ích nội khu"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-10 items-center pt-7">
+              <div className="w-[55%] w-full">
+                <img
+                  src="/tienichdichuyen.jpg"
+                  alt="Vị trí Conic Boulevard"
+                  className="shadow-lg w-full object-cover"
+                />
+              </div>
+              <div className="w-[45%] w-full">
+                <h2 className="text-4xl text-darkgreen font-dancing">
+                  Kết nối hoàn hảo, dẫn lối tiện nghi
+                </h2>
+                <p className="pb-1">
+                      Conic Boulevard toa lac kiêu hãnh tại khu Tây Nam TP.HCM, 
+                      đón đầu sự phát triển của khu vực thông qua hàng loạt dự án hạ tầng giao thông nghìn tỷ. 
+                      Đây không chỉ là nơi kết nối các tuyến giao thông trọng điểm mà còn là đầu mối thông thương liên vùng, 
+                      đảm bảo khả năng di chuyển thuận tiện trong khu vực và liên tỉnh.
+                </p>
+                <h2 className="text-4xl text-luxurybronze font-allura pt-3">
+                  Thời gian di chuyển đến các địa điểm trong khu vực.
+                </h2>
+                <ul className="ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+                  <li className="hover:text-darkgreen transition duration-200">5 phút: đến bến xe miền tây mới</li>
+                  <li className="hover:text-darkgreen transition duration-200">7 phút: chợ Bình Chánh</li>
+                  <li className="hover:text-darkgreen transition duration-200">8 phút: trường THPT Bình Tân</li>
+                  <li className="hover:text-darkgreen transition duration-200">10 phút: Aeon mall Tên Lửa</li>
+                  <li className="hover:text-darkgreen transition duration-200">15 phút: UBND Bình Chánh</li>
+                  <li className="hover:text-darkgreen transition duration-200">20 phút: làng đại học Q.7</li>
+                  <li className="hover:text-darkgreen transition duration-200">25 phút: bệnh viện Nhi Đồng 2</li>
+                  <li className="hover:text-darkgreen transition duration-200">25 phút: trung tâm quận 1, quận 7</li>
+                  <li className="hover:text-darkgreen transition duration-200">30 phút: trường quốc tế RMIT</li>
+                  <li className="hover:text-darkgreen transition duration-200">35 phút: sân bay Tân Sơn Nhất</li>
+                </ul>
+              </div>              
+            </div>
           </section>
     
           <section id="matbang" className="px-10 py-5">
-            <h2 className="text-2xl font-bold">Mặt bằng</h2>
+            <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Mặt bằng</h2>
             <p>...</p>
           </section>
     
           <section id="tiendo" className="px-10 py-5">
-            <h2 className="text-2xl font-bold">Tiến độ</h2>
+            <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Tiến độ</h2>
             <p>...</p>
           </section>
     
           <section id="giaban" className="px-10 py-5">
-            <h2 className="text-2xl font-bold">Giá bán</h2>
+            <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Giá bán</h2>
             <p>...</p>
           </section>
 
           <section id="lienhe" className="px-10 py-5">
-            <h2 className="text-2xl font-bold">Liên hệ</h2>
+            <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Liên hệ</h2>
             <p>...</p>
           </section>
         </div>
