@@ -100,7 +100,7 @@ const Home = () => {
                 đón đầu tương lai
               </h3>
               <p className="pb-2">
-                Conic Boulevard toa lac kiêu hãnh tại khu Tây Nam TP.HCM,
+                Conic Boulevard tọa lạc kiêu hãnh tại khu Tây Nam TP.HCM,
                 đón đầu sự phát triển của khu vực thông qua hàng loạt dự án hạ tầng giao thông nghìn tỷ.
                 Đây không chỉ là nơi kết nối các tuyến giao thông trọng điểm mà còn là đầu mối thông thương liên vùng,
                 đảm bảo khả năng di chuyển thuận tiện trong khu vực và liên tỉnh.
@@ -110,7 +110,7 @@ const Home = () => {
               </p>
               <ul className="ml-2 list-disc pl-5">
                 <li>Đón đầu các dự án hạ tầng giao thông trọng điểm: Metro 3A (Bến Thành – Tân Kiên), tuyến đường sắt cao tốc TP.HCM -Cần Thơ</li>
-                <li>Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương -Rach Nước Lên</li>
+                <li>Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương -Rạch Nước Lên</li>
               </ul>
             </div>
             <div className="w-[65%] w-full">
