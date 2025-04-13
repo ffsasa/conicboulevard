@@ -12,7 +12,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl font-bold">CONIC BOULEVARD</h1>
             <p className="text-lg md:text-[1.3rem] italic font-semibold text-brightgreen pb-6">"ĐỦ GẦN ĐỂ TẬN HƯỞNG - ĐỦ XA ĐỂ RIÊNG TƯ"</p>
             <a 
-              href="#lienhe"
+              href="#dangky2"
               className="group border border-white px-6 py-2 rounded-md hover:text-brightgreen hover:border-brightgreen transition flex items-center"
             >
               <i className="fas fa-file-signature text-white pr-2 group-hover:text-brightgreen transition"></i>

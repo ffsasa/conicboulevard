@@ -4,7 +4,7 @@ export default function RegisterForm() {
     return (
         <section
             className="bg-gradient-to-b from-green-400 flex flex-col md:flex-row to-green-100 py-8 px-4"
-            id="dangky"
+            id="dangky2"
         >
             {/* Phần ảnh */}
             <div className="w-full md:w-7/12 mb-6 md:mb-0">
