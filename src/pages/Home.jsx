@@ -1,5 +1,6 @@
 // src/pages/Home.jsx
 import RegisterForm from "../components/RegisterForm";
+import EndingRegisterForm from "../components/EndingRegisterForm";
 import FloorSlider from "../components/FloorSlider";
 
 const Home = () => {
@@ -270,9 +271,9 @@ const Home = () => {
         <section id="tiendo" className="px-10 py-5">
           <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Tiến độ</h2>
           <p className="text-lg pb-4">
-            CĂN HỘ <strong>CONIC BOULEVARD</strong> ĐÃ HOÀN THIỆN - SẴN SÀNG BÀN GIAO TỪ <strong>THÁNG 4/2025</strong>. <br/>
+            CĂN HỘ <strong>CONIC BOULEVARD</strong> ĐÃ HOÀN THIỆN - SẴN SÀNG BÀN GIAO TỪ <strong>THÁNG 4/2025</strong>. <br />
             Với cương vị <strong>chủ đầu tư</strong>, chúng tôi cam kết xây dựng đúng quy chuẩn và đúng tiến độ,
-            minh bạch về pháp lý, đảm bảo quyền lợi cho những cư dân tương lai của dự án. 
+            minh bạch về pháp lý, đảm bảo quyền lợi cho những cư dân tương lai của dự án.
             Chúng tôi cũng cam kết đồng hành cùng cư dân tương lai, đảm bảo cuộc sống tốt đẹp.
             Chúng tôi tin tưởng rằng <strong>Conic Boulevard</strong> sẽ là một biểu tượng mới của <strong>Bình Chánh</strong>,
             mang lại giá trị thật cho tất cả khách hàng của chúng tôi.
@@ -298,32 +299,101 @@ const Home = () => {
           <div className="w-[100%] w-full py-5">
             <img
               src="/thucte.jpg"
-              alt="Vị trí Conic Boulevard"
+              alt="Thực tế Conic Boulevard"
               className="shadow-lg w-full object-cover"
             />
           </div>
           <div className="w-[100%] w-full">
             <img
               src="/bangiao.jpg"
+              alt="Bàn giao Conic Boulevard"
+              className="shadow-lg w-full object-cover"
+            />
+          </div>
+        </section>
+
+        <section id="giaban" className="px-6 md:px-20 py-10 bg-[#fdfaf5]">
+          <h2 className="text-4xl text-center text-darkgreen font-dancing pb-4">Giá bán</h2>
+          <h2 className="text-2xl md:text-4xl text-center text-luxurybronze font-allura pt-3">
+            Cơ hội vàng sở hữu căn hộ Conic Boulevard với mức giá bất ngờ
+          </h2>
+
+          <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+            {/* Card 2 phòng ngủ */}
+            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img src="/giaban-2pn.jpg" alt="Căn hộ 2 phòng ngủ" className="w-full h-auto" />
+              <div className="bg-[#a8844e] p-5 text-white">
+                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
+                  Căn hộ 2 phòng ngủ
+                </div>
+                <div className="pt-4 text-sm font-semibold">
+                  Diện tích: <span className="text-white font-normal">84.6 m²</span>
+                </div>
+                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
+                  GIÁ BÁN: Chỉ từ 2,5 tỷ VNĐ
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 phòng ngủ */}
+            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img src="/giaban-3pn.jpg" alt="Căn hộ 3 phòng ngủ" className="w-full h-auto" />
+              <div className="bg-[#a8844e] p-5 text-white">
+                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
+                  Căn hộ 3 phòng ngủ
+                </div>
+                <div className="pt-4 text-sm font-semibold">
+                  Diện tích: <span className="text-white font-normal">114 m²</span>
+                </div>
+                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
+                  GIÁ BÁN: Chỉ từ 3,5 tỷ VNĐ
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 className="text-2xl md:text-4xl text-center text-luxurybronze font-allura pt-10">
+            Đột phá với mức giá rẻ nhất thị trường khu Tây
+          </h2>
+
+          <div className="w-[100%] w-full py-5">
+            <img
+              src="/bando.jpg"
               alt="Vị trí Conic Boulevard"
               className="shadow-lg w-full object-cover"
             />
           </div>
         </section>
 
-        <section id="giaban" className="px-10 py-5">
-          <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Giá bán</h2>
-          <p>...</p>
-        </section>
+        <section id="pttt" className="px-10 pb-5">
+          <h2 className="text-4xl pt-4 text-darkgreen font-dancing">PHƯƠNG THỨC THANH TOÁN MỚI NHẤT THÁNG 4/2025
+          </h2>
+          <div className="flex justify-center py-5">
+            <img
+              src="/pttt.jpg"
+              alt="PTTT Conic Boulevard"
+              className="shadow-lg max-w-5xl object-cover"
+            />
+          </div>
+          <h2 className="text-4xl pt-8 text-darkgreen font-dancing">PHƯƠNG THỨC THANH TOÁN VAY NGÂN HÀNG
+          </h2>
+          <div className="flex justify-center py-5">
+            <img
+              src="/ptvay.jpg"
+              alt="PTTT Conic Boulevard"
+              className="shadow-lg max-w-5xl object-cover"
+            />
+          </div>
 
-        <section id="pttt" className="px-10 py-5">
-          <h2 className="text-4xl pb-4 text-darkgreen font-dancing">PTTT</h2>
-          <p>...</p>
-        </section>
+          <div className="flex justify-center pb-5 pt-16">
+            <img
+              src="/uudai.jpg"
+              alt="Ưu đãi Conic Boulevard"
+              className="shadow-lg w-full object-cover"
+            />
+          </div>
 
-        <section id="lienhe" className="px-10 py-5">
-          <h2 className="text-4xl pb-4 text-darkgreen font-dancing">Liên hệ</h2>
-          <p>...</p>
+          <EndingRegisterForm />
         </section>
       </div>
     </>
