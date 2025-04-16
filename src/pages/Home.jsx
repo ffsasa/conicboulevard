@@ -411,28 +411,17 @@ const Home = () => {
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
             alt="Zalo"
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg transition-transform duration-300 animate-shake"
+            className="w-12 h-12 md:w-14 md:h-14 rounded-md shadow-lg transition-transform duration-300 animate-shake"
           />
         </a>
 
         {/* Nút Gọi điện */}
         <a href="tel:0845588589" className="fixed bottom-5 right-4 md:bottom-5 md:right-6 z-50">
-          <div className="bg-green-500 text-white p-3 md:p-4 rounded-full shadow-lg animate-shake">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 md:h-6 md:w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 5a2 2 0 012-2h2a2 2 0 012 2v1a2 2 0 01-.586 1.414l-.707.707a16.017 16.017 0 006.364 6.364l.707-.707A2 2 0 0116 15h1a2 2 0 012 2v2a2 2 0 01-2 2h-.5C9.492 21 3 14.508 3 6.5V6a1 1 0 010-.01V5z"
-              />
-            </svg>
-          </div>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+            alt="Call"
+            className="w-10 h-10 md:w-14 md:h-14 animate-shake"
+          />
         </a>
 
       </div>
