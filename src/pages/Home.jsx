@@ -406,7 +406,7 @@ const Home = () => {
           href="https://zalo.me/0845588589"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-10 right-4 md:bottom-24 md:right-6 z-50"
+          className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-50"
         >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
