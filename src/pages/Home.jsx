@@ -331,7 +331,7 @@ const Home = () => {
                   Diện tích: <span className="text-white font-normal">84.6 m²</span>
                 </div>
                 <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  GIÁ BÁN: Chỉ từ 2,5 tỷ VNĐ
+                  GIÁ BÁN: Chỉ từ 2,25 tỷ VNĐ
                 </div>
               </div>
             </div>
@@ -347,7 +347,7 @@ const Home = () => {
                   Diện tích: <span className="text-white font-normal">114 m²</span>
                 </div>
                 <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  GIÁ BÁN: Chỉ từ 3,5 tỷ VNĐ
+                  GIÁ BÁN: Chỉ từ 3,05 tỷ VNĐ
                 </div>
               </div>
             </div>
