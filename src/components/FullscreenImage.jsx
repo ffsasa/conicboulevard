@@ -1,10 +1,29 @@
-import { useRef, useState } from "react";
+import { useState, useRef } from "react";
 
 const FullscreenImage = ({ src, alt, className = "" }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const openFullscreen = () => {
-    setIsFullscreen(true);
+  const touchStartRef = useRef({ x: 0, y: 0, time: 0 });
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    touchStartRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+      time: new Date().getTime(),
+    };
+  };
+
+  const handleTouchEnd = (e) => {
+    const touch = e.changedTouches[0];
+    const dx = Math.abs(touch.clientX - touchStartRef.current.x);
+    const dy = Math.abs(touch.clientY - touchStartRef.current.y);
+    const dt = new Date().getTime() - touchStartRef.current.time;
+
+    // Nếu chạm nhẹ không di chuyển nhiều và thời gian ngắn → xem như là click
+    if (dx < 10 && dy < 10 && dt < 300) {
+      setIsFullscreen(true);
+    }
   };
 
   const closeFullscreen = () => {
@@ -14,8 +33,9 @@ const FullscreenImage = ({ src, alt, className = "" }) => {
   return (
     <>
       <button
-        onClick={openFullscreen}
-        onTouchStart={openFullscreen}
+        onClick={() => setIsFullscreen(true)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         className="p-0 border-none bg-transparent"
       >
         <img
