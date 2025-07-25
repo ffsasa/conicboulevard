@@ -141,7 +141,7 @@ const Home = () => {
               ></iframe>
             </div> */}
             <FullscreenVideo
-              videoUrl="https://www.youtube.com/embed/7fXVvcROavY"
+              videoUrl="https://www.youtube.com/embed/7fXVvcROavY?enablejsapi=1"
               className="w-full max-w-5xl aspect-video"
             />
           </div>
