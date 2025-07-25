@@ -13,13 +13,17 @@ const FullscreenImage = ({ src, alt, className = "" }) => {
 
   return (
     <>
-      <img
-        src={src}
-        alt={alt}
+      <button
         onClick={openFullscreen}
         onTouchStart={openFullscreen}
-        className={`cursor-pointer ${className}`}
-      />
+        className="p-0 border-none bg-transparent"
+      >
+        <img
+          src={src}
+          alt={alt}
+          className={`cursor-pointer ${className}`}
+        />
+      </button>
 
       {isFullscreen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 z-[9998] flex items-center justify-center">
