@@ -1,7 +1,9 @@
-import { useRef, useEffect, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
-const FullscreenVideo = ({ videoUrl }) => {
+const FullscreenVideo = ({ videoUrl, className = "" }) => {
   const containerRef = useRef(null);
+  const iframeRef = useRef(null);
+  const playerRef = useRef(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const openFullscreen = () => {
@@ -12,59 +14,78 @@ const FullscreenVideo = ({ videoUrl }) => {
   };
 
   const closeFullscreen = () => {
+    setIsFullscreen(false);
     if (document.exitFullscreen) document.exitFullscreen();
     else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
     else if (document.msExitFullscreen) document.msExitFullscreen();
   };
 
   useEffect(() => {
-    const handleChange = () => {
-      const isNowFullscreen =
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.msFullscreenElement;
-      setIsFullscreen(!!isNowFullscreen);
+    const handleStateChange = (event) => {
+      if (event.data === window.YT?.PlayerState?.PLAYING) {
+        openFullscreen();
+        setIsFullscreen(true);
+      }
     };
 
-    document.addEventListener("fullscreenchange", handleChange);
-    document.addEventListener("webkitfullscreenchange", handleChange);
-    document.addEventListener("msfullscreenchange", handleChange);
+    const onPlayerReady = (event) => {
+      playerRef.current = event.target;
+      playerRef.current.addEventListener("onStateChange", handleStateChange);
+    };
+
+    const loadYouTubeAPI = () => {
+      if (!window.YT) {
+        const tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      } else {
+        window.onYouTubeIframeAPIReady();
+      }
+    };
+
+    window.onYouTubeIframeAPIReady = () => {
+      playerRef.current = new window.YT.Player(iframeRef.current, {
+        events: {
+          onReady: onPlayerReady,
+        },
+      });
+    };
+
+    loadYouTubeAPI();
 
     return () => {
-      document.removeEventListener("fullscreenchange", handleChange);
-      document.removeEventListener("webkitfullscreenchange", handleChange);
-      document.removeEventListener("msfullscreenchange", handleChange);
+      if (playerRef.current?.destroy) playerRef.current.destroy();
     };
   }, []);
 
+  // Đảm bảo URL có enablejsapi=1
+  const videoWithAPI = videoUrl.includes("enablejsapi=1")
+    ? videoUrl
+    : `${videoUrl}${videoUrl.includes("?") ? "&" : "?"}enablejsapi=1`;
+
   return (
-    <div
-      ref={containerRef}
-      className={`relative max-w-5xl w-full aspect-video rounded-xl overflow-hidden shadow-lg ${
-        isFullscreen ? "fixed inset-0 z-[9998] bg-black" : ""
-      }`}
-      onClick={openFullscreen}
-    >
-      <iframe
-        className="w-full h-full"
-        src={videoUrl}
-        title="Video"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-      {isFullscreen && (
-        <button
-          onClick={(e) => {
-            e.stopPropagation(); // Ngăn click tiếp tục gây fullscreen
-            closeFullscreen();
-          }}
-          className="fixed top-4 right-4 z-[9999] bg-black bg-opacity-60 text-white text-xl px-4 py-2 rounded-full shadow-xl transition hover:bg-opacity-80"
-        >
-          ✕
-        </button>
-      )}
-    </div>
+    <>
+      <div ref={containerRef} className={`${className} relative`}>
+        <iframe
+          ref={iframeRef}
+          className="w-full h-full rounded-xl shadow-lg"
+          src={videoWithAPI}
+          title="Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        {isFullscreen && (
+          <button
+            onClick={closeFullscreen}
+            className="absolute top-4 right-4 z-[9999] bg-white text-black text-2xl px-3 py-1 rounded-full shadow-lg"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -140,7 +140,10 @@ const Home = () => {
                 allowFullScreen
               ></iframe>
             </div> */}
-            <FullscreenVideo videoUrl="https://www.youtube.com/embed/7fXVvcROavY" />
+            <FullscreenVideo
+              videoUrl="https://www.youtube.com/embed/7fXVvcROavY"
+              className="w-full max-w-5xl aspect-video"
+            />
           </div>
         </section>
 
