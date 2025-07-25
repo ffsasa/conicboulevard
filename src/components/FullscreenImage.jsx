@@ -17,6 +17,7 @@ const FullscreenImage = ({ src, alt, className = "" }) => {
         src={src}
         alt={alt}
         onClick={openFullscreen}
+        onTouchStart={openFullscreen}
         className={`cursor-pointer ${className}`}
       />
 
