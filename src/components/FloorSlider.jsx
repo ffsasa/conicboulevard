@@ -15,7 +15,7 @@ const floorPlans = [
 export default function FloorSlider() {
   return (
     <div className="w-full pb-5 md:py-10">
-      <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen text-center font-dancing">
+      <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen text-center font-dancing sm:pb-4">
         Mặt Bằng Tổng Thể
       </h2>
       <Swiper

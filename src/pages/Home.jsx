@@ -6,15 +6,15 @@ import FloorSlider from "../components/FloorSlider";
 const Home = () => {
   return (
     <>
-      <div className="container mx-auto px-4 sm:px-10 lg:px-20">
-        <section id="thongtin" className="px-5 py-5 sm:px-10">
+      <div className="w-full px-2 sm:px-6 lg:px-10">
+        <section id="thongtin" className="max-w-screen-2xl mx-auto sm:pt-10">
           <div className="flex flex-col md:flex-row gap-10 items-start">
             {/* Khối bên trái chứa tiêu đề + nội dung */}
             <div className="flex-1 flex flex-col">
-              <h2 className="text-3xl sm:text-4xl font-bold pb-2 text-black font-dancing">Tổng Quan Dự Án</h2>
-              <h2 className="text-2xl sm:text-3xl font-bold pb-4 text-darkgreen">CONIC BOULEVARD</h2>
+              <h2 className="text-3xl sm:text-5xl font-bold pb-2 text-black font-dancing">Tổng Quan Dự Án</h2>
+              <h2 className="text-2xl sm:text-4xl font-bold pb-4 text-darkgreen">CONIC BOULEVARD</h2>
 
-              <div className="text-sm sm:text-base">
+              <div className="text-sm sm:text-2xl">
                 <p>
                   <strong>TỔNG DIỆN TÍCH:</strong> 5.3 ha<br />
                   <strong>QUY MÔ:</strong> Gồm 2 phân khu<br />
@@ -63,7 +63,7 @@ const Home = () => {
           <RegisterForm />
         </section>
 
-        <section id="vitri" className="px-10 py-5 pt-10">
+        <section id="vitri" className="max-w-screen-2xl mx-auto sm:pt-10">
           <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
             {/* Hình ảnh bên trái với dòng chữ bên dưới */}
             <div className="w-[65%] w-full">
@@ -72,21 +72,21 @@ const Home = () => {
                 alt="Vị trí Conic Boulevard"
                 className="shadow-lg w-full max-w-3xl object-cover"
               />
-              <p className="text-xl text-darkgreen font-dancing mt-3 text-center">
+              <p className="text-sm sm:text-2xl text-darkgreen font-dancing mt-3 text-center">
                 ĐỦ GẦN PHỒN HOA - ĐỦ XA VỘI VÃ
               </p>
             </div>
             {/* Văn bản bên phải canh giữa theo chiều cao */}
             <div className="w-[35%] w-full">
-              <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen font-dancing">Vị Trí Đắc Địa</h2>
-              <h1 className="text-2xl text-darkgreen font-dancing">Đủ gần</h1>
-              <p>
+              <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">Vị Trí Đắc Địa</h2>
+              <h1 className="text-2xl sm:text-4xl text-darkgreen font-dancing">Đủ gần</h1>
+              <p className="text-sm sm:text-2xl">
                 • Năm ngay nút giao Võ Văn Kiệt với Quốc Lộ 1A <br />
                 • Kết nối Quận 5, 6, 1 qua Đại Lộ Võ Văn Kiệt. <br />
                 • Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A. <br />
               </p>
-              <h1 className="text-2xl text-darkgreen font-dancing pt-4">Đủ xa</h1>
-              <p>
+              <h1 className="text-2xl sm:text-4xl text-darkgreen font-dancing pt-4">Đủ xa</h1>
+              <p className="text-sm sm:text-2xl">
                 • Nằm biệt lập trong khu dân cư 584 đường Huỳnh Bá Chánh, xã Tân Kiên, Huyện Bình Chánh.
               </p>
             </div>
@@ -94,20 +94,20 @@ const Home = () => {
           <div className="flex flex-col md:flex-row gap-10 pt-5 md:pt-10 items-center">
             {/* Văn bản bên trái */}
             <div className="w-[35%] w-full">
-              <h3 className="text-3xl sm:text-4xl font-bold text-darkgreen font-dancing pb-2">
+              <h3 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing pb-2">
                 Vị trí chiến lược, <br />
                 đón đầu tương lai
               </h3>
-              <p className="pb-2">
+              <p className="pb-2 text-sm sm:text-2xl">
                 Conic Boulevard tọa lạc kiêu hãnh tại khu Tây Nam TP.HCM,
                 đón đầu sự phát triển của khu vực thông qua hàng loạt dự án hạ tầng giao thông nghìn tỷ.
                 Đây không chỉ là nơi kết nối các tuyến giao thông trọng điểm mà còn là đầu mối thông thương liên vùng,
                 đảm bảo khả năng di chuyển thuận tiện trong khu vực và liên tỉnh.
               </p>
-              <p className="pb-2">
+              <p className="pb-2 text-sm sm:text-2xl">
                 Đón đầu quy hoạch Bình Chánh - đầu mối quan trọng kết nối TP.HCM với các tỉnh ĐBSCL
               </p>
-              <ul className="ml-2 list-disc pl-5">
+              <ul className="ml-2 list-disc pl-5 text-sm sm:text-2xl">
                 <li>Đón đầu các dự án hạ tầng giao thông trọng điểm: Metro 3A (Bến Thành – Tân Kiên), tuyến đường sắt cao tốc TP.HCM -Cần Thơ</li>
                 <li>Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương -Rạch Nước Lên</li>
               </ul>
@@ -134,8 +134,8 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="tienich" className="px-4 sm:px-6 md:px-10 py-5 pt-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-darkgreen pb-4 font-dancing text-center md:text-left">
+        <section id="tienich" className="max-w-screen-2xl mx-auto sm:pt-10">
+          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen pb-4 font-dancing">
             Tiện Ích Nội Khu
           </h2>
 
@@ -169,10 +169,10 @@ const Home = () => {
               />
             </div>
             <div className="w-full md:w-[45%]">
-              <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen font-dancing pb-3 text-center md:text-left">
+              <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing pb-3 ">
                 Thời gian di chuyển đến các tiện ích trong khu vực.
               </h2>
-              <ul className="ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm md:text-base">
+              <ul className="ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-2xl">
                 <li className="hover:text-darkgreen transition duration-200">5 phút: đến bến xe miền tây mới</li>
                 <li className="hover:text-darkgreen transition duration-200">7 phút: chợ Bình Chánh</li>
                 <li className="hover:text-darkgreen transition duration-200">8 phút: trường THPT Bình Tân</li>
@@ -188,10 +188,10 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="matbang" className="px-10 py-5">
+        <section id="matbang" className="max-w-screen-2xl mx-auto sm:pt-10">
           <FloorSlider />
           <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen pb-4 font-dancing">Thiết kế căn hộ hiện đại với diện tích lớn - sang trọng</h2>
-          <p className="pb-1">
+          <p className="pb-1 text-sm sm:text-2xl">
             Conic Boulevard thiết lập tiêu chuẩn sống đẳng cấp với những căn hộ diện tích lớn từ 84,32m2 đến 114m2,
             đáp ứng nhu cầu ngày càng cao về không gian sống rộng, thoáng giữa trung tâm thành phố.
             Trong bối cảnh “đất chật, người đông”, Conic Boulevard trở thành lựa chọn hiếm hoi mang
@@ -214,7 +214,7 @@ const Home = () => {
           <RegisterForm />
         </section>
 
-        <section className="bg-white bg-opacity-70 px-4 py-6">
+        <section id="dacdiem" className="bg-white bg-opacity-70 px-4 py-6">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-center text-base sm:text-lg md:text-2xl font-semibold text-green-800 mb-6 leading-relaxed">
               Đặc điểm nổi bật trong thiết kế căn hộ tại Conic Boulevard so với chung cư khác tại khu vực như:
@@ -269,9 +269,9 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="tiendo" className="px-10 py-5">
-          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen font-dancing pb-3 md:pb-5">Tiến Độ</h2>
-          <p className="text-lg pb-4">
+        <section id="tiendo" className="max-w-screen-2xl mx-auto sm:pt-10">
+          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing pb-3">Tiến Độ</h2>
+          <p className="text-sm sm:text-2xl sm:pb-2">
             CĂN HỘ <strong>CONIC BOULEVARD</strong> ĐÃ HOÀN THIỆN - SẴN SÀNG BÀN GIAO TỪ <strong>THÁNG 4/2025</strong>. <br />
             Với cương vị <strong>chủ đầu tư</strong>, chúng tôi cam kết xây dựng đúng quy chuẩn và đúng tiến độ,
             minh bạch về pháp lý, đảm bảo quyền lợi cho những cư dân tương lai của dự án.
@@ -280,7 +280,7 @@ const Home = () => {
             mang lại giá trị thật cho tất cả khách hàng của chúng tôi.
           </p>
 
-          <h3 className="text-xl font-semibold text-darkgreen mb-2">
+          <h3 className="text-sm sm:text-2xl font-semibold text-darkgreen mb-2">
             VIDEO THỰC TẾ CĂN HỘ CONIC BOULEVARD
           </h3>
 
@@ -313,8 +313,8 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="giaban" className="px-6 md:px-20 py-5 md:py-10 bg-[#fdfaf5]">
-          <h2 className="text-center text-3xl sm:text-4xl font-bold text-darkgreen font-dancing md:pb-4">Giá Bán</h2>
+        <section id="giaban" className="max-w-screen-2xl mx-auto sm:pt-10">
+          <h2 className="text-center text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">Giá Bán</h2>
           <h2 className="text-2xl md:text-4xl text-center text-luxurybronze font-allura pt-3">
             Cơ hội vàng sở hữu căn hộ Conic Boulevard với mức giá bất ngờ
           </h2>
@@ -366,28 +366,28 @@ const Home = () => {
           </div>
         </section>
 
-        <section id="pttt" className="px-4 md:px-10 pb-5">
-          <h2 className="text-3xl sm:text-4xl font-bold pt-4 text-darkgreen font-dancing text-center">
+        <section id="pttt" className="max-w-screen-2xl mx-auto sm:pt-10">
+          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing text-center">
             Phương Thức Thanh Toán Mới Nhất Tháng 4/2025
           </h2>
 
-          <div className="flex justify-center py-5">
+          <div className="w-[100%] w-full py-5">
             <img
               src="/pttt.jpg"
               alt="PTTT Conic Boulevard"
-              className="shadow-lg w-full max-w-4xl h-auto"
+              className="shadow-lg w-full object-cover"
             />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold pt-8 text-darkgreen font-dancing text-center">
+          <h2 className="text-3xl sm:text-5xl font-bold pt-8 text-darkgreen font-dancing text-center">
             Phương Thức Thanh Toán Vay Ngân Hàng
           </h2>
 
-          <div className="flex justify-center py-5">
+          <div className="w-[100%] w-full py-5">
             <img
               src="/ptvay.jpg"
               alt="PTTT Conic Boulevard"
-              className="shadow-lg w-full max-w-4xl h-auto"
+              className="shadow-lg w-full object-cover"
             />
           </div>
 
