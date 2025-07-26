@@ -225,7 +225,25 @@ const Home = () => {
         </section>
 
         <section id="matbang" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
-          <FloorSlider />
+          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen text-center font-dancing sm:pb-4">
+            Mặt Bằng Tổng Thể
+          </h2>
+          <div className="w-full">
+            <FullscreenImage
+              src="/blocka2.jpg"
+              alt="Tiện ích nội khu"
+              className="shadow-lg w-full object-cover"
+            />
+          </div>
+
+          <div className="w-full">
+            <FullscreenImage
+              src="/blockb2.jpg"
+              alt="Tiện ích nội khu"
+              className="shadow-lg w-full object-cover"
+            />
+          </div>
+          {/* <FloorSlider /> */}
           <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen pb-4 font-dancing">Thiết kế căn hộ hiện đại với diện tích lớn - sang trọng</h2>
           <p className="md:pb-1 text-sm sm:text-2xl">
             Conic Boulevard thiết lập tiêu chuẩn sống đẳng cấp với những căn hộ diện tích lớn từ 84,32m2 đến 114m2,
