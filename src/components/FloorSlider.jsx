@@ -15,58 +15,63 @@ const floorPlans = [
 
 export default function FloorSlider() {
   const [isFs, setIsFs] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const wrapperRef = useRef(null);
 
-  // Theo dõi fullscreen
+  // Bật/tắt khi thực sự fullscreen API change
   useEffect(() => {
     const onFsChange = () => {
-      // Mỗi khi fullscreenchange, kiểm tra xem chính wrapperRef đang full-screen không
       setIsFs(document.fullscreenElement === wrapperRef.current);
     };
     document.addEventListener("fullscreenchange", onFsChange);
     return () => document.removeEventListener("fullscreenchange", onFsChange);
   }, []);
 
+  // Mở fullscreen: ưu tiên API, fallback CSS
   const openFullscreen = () => {
     const el = wrapperRef.current;
-    if (!el) return;
-    if (el.requestFullscreen) el.requestFullscreen();
-    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-    else if (el.msRequestFullscreen) el.msRequestFullscreen();
+    if (el && el.requestFullscreen) {
+      el.requestFullscreen();
+    } else {
+      // fallback: simulate fullscreen via CSS
+      setIsExpanded(true);
+    }
   };
 
+  // Thoát fullscreen/API hoặc CSS
   const exitFullscreen = () => {
-    if (document.exitFullscreen) document.exitFullscreen();
-    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+    setIsExpanded(false);
   };
+
+  // Chỉ khi đang fullscreen API hoặc CSS thì overlay chế độ full
+  const fullMode = isFs || isExpanded;
 
   return (
     <div
       ref={wrapperRef}
-      className={`w-full pb-5 md:py-10 relative ${
-        isFs ? "flex flex-col h-screen" : ""
-      }`}
+      className={`w-full pb-5 md:py-10 relative 
+        ${fullMode ? "fixed inset-0 bg-black flex flex-col" : ""}`}
+      style={fullMode ? { zIndex: 1000 } : undefined}
     >
-      {/* Tiêu đề luôn nằm top */}
+      {/* Tiêu đề */}
       <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen text-center font-dancing sm:pb-4">
         Mặt Bằng Tổng Thể
       </h2>
 
-      {/* Swiper sẽ flex-1 và chiếm hết khoảng còn lại của wrapper khi full-screen */}
+      {/* Slider flex-1 khi fullScreen/CSS */}
       <Swiper
         modules={[Navigation, Pagination]}
         slidesPerView={1}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
+        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
         pagination={{ clickable: true }}
         allowTouchMove={false}
         speed={700}
         loop={true}
-        className={`w-full mx-auto rounded-xl shadow-xl relative ${
-          isFs ? "flex-1" : ""
-        }`}
+        className={`w-full mx-auto rounded-xl shadow-xl relative 
+          ${fullMode ? "flex-1" : ""}`}
       >
         {floorPlans.map((plan, idx) => (
           <SwiperSlide key={idx}>
@@ -74,11 +79,10 @@ export default function FloorSlider() {
               src={plan.src}
               alt={plan.alt}
               onClick={openFullscreen}
-              className={`cursor-zoom-in w-full ${
-                isFs
-                  ? "h-full w-auto object-contain mx-auto"
-                  : "h-auto object-cover"
-              }`}
+              className={`cursor-zoom-in w-full 
+                ${fullMode 
+                  ? "h-full w-auto object-contain mx-auto" 
+                  : "h-auto object-cover"}`}
             />
           </SwiperSlide>
         ))}
@@ -87,8 +91,8 @@ export default function FloorSlider() {
         <div className="swiper-button-next !text-darkgreen" />
       </Swiper>
 
-      {/* Nút ✕ hiển thị khi wrapper đang full-screen */}
-      {isFs && (
+      {/* Nút ✕ cố định */}
+      {fullMode && (
         <button
           onClick={exitFullscreen}
           className="fixed top-4 right-4 z-50 bg-white text-black text-2xl p-2 rounded-full shadow-lg"

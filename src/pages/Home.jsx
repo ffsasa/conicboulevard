@@ -12,7 +12,7 @@ const Home = () => {
         <section id="thongtin" className="max-w-screen-2xl mx-auto sm:pt-10">
           <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-start">
             {/* Khối bên trái chứa tiêu đề + nội dung */}
-            <div className="w-full md:w-1/3 flex flex-col pt-8">
+            <div className="w-full md:w-1/3 flex flex-col sm:pt-8">
               <h2
                 className="text-3xl sm:text-5xl font-bold pb-2 text-lightgreen"
                 style={{
@@ -28,25 +28,25 @@ const Home = () => {
                   <strong>TỔNG DIỆN TÍCH: 5.3 ha</strong> 
                 </p>
 
-                <div className="pt-4">
+                <div className="pt-2 sm:pt-4">
                   <p>
                     <strong>QUY MÔ:</strong> Gồm 2 phân khu: 114 căn thấp tầng, 2 khối căn hộ: 952 căn hộ + 24 căn shophouse
                   </p>
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-2 sm:pt-4">
                   <p>
                     <strong>- Block A:</strong> 4 nguyên đơn cao 15 tầng, 1 tầng hầm, tổng số 420 căn hộ & 10 căn shophouse
                   </p>
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-2 sm:pt-4">
                   <p>
                     <strong>- Block B:</strong> 5 nguyên đơn cao 15 tầng, 1 tầng hầm, tổng số 532 căn hộ & 14 căn shophouse
                   </p>
                 </div>
 
-                <div className="pt-4 space-y-4">
+                <div className="pt-2 sm:pt-4 space-y-2 sm:space-y-4">
                   <p>
                     <strong>MẬT ĐỘ XÂY DỰNG:</strong>{" "}
                     <strong className="text-xl sm:text-4xl">28,7%</strong>
@@ -99,7 +99,7 @@ const Home = () => {
             </div>
 
             {/* Văn bản bên phải canh giữa theo chiều cao */}
-            <div className="w-full md:w-[40%] pl-16">
+            <div className="w-full md:w-[40%] sm:pl-16">
               <h2 className="text-3xl sm:text-6xl font-bold text-darkgreen font-dancing">
                 Vị Trí Đắc Địa
               </h2>
@@ -112,7 +112,7 @@ const Home = () => {
                 • Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A.<br />
                 • Kết nối với 7 Quận, Huyện qua tuyến kênh Tham Lương – Bến Cát – Rạch Nước Lên.<br />
               </p>
-              <h1 className="text-2xl sm:text-5xl text-darkgreen font-dancing mt-4">
+              <h1 className="text-2xl sm:text-5xl text-darkgreen font-dancing sm:mt-4">
                 Đủ xa
               </h1>
               <p className="text-sm sm:text-3xl">

@@ -37,7 +37,7 @@ export default function RegisterForm() {
         <img
           src="/promotion2.jpg"
           alt="Promotion"
-          className="shadow-lg w-full h-48 sm:h-64 md:h-full object-cover rounded-xl"
+          className="shadow-lg w-full h-auto md:h-full object-contain rounded-xl"
         />
       </div>
 
