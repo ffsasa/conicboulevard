@@ -18,7 +18,7 @@ export default function FloorSlider() {
   const [isExpanded, setIsExpanded] = useState(false);
   const wrapperRef = useRef(null);
 
-  // Bật/tắt khi thực sự fullscreen API change
+  // Theo dõi fullscreen API
   useEffect(() => {
     const onFsChange = () => {
       setIsFs(document.fullscreenElement === wrapperRef.current);
@@ -27,41 +27,43 @@ export default function FloorSlider() {
     return () => document.removeEventListener("fullscreenchange", onFsChange);
   }, []);
 
-  // Mở fullscreen: ưu tiên API, fallback CSS
   const openFullscreen = () => {
     const el = wrapperRef.current;
     if (el && el.requestFullscreen) {
       el.requestFullscreen();
     } else {
-      // fallback: simulate fullscreen via CSS
+      // Fallback CSS overlay cho mobile
       setIsExpanded(true);
     }
   };
 
-  // Thoát fullscreen/API hoặc CSS
   const exitFullscreen = () => {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
+    if (document.exitFullscreen) document.exitFullscreen();
     setIsExpanded(false);
   };
 
-  // Chỉ khi đang fullscreen API hoặc CSS thì overlay chế độ full
   const fullMode = isFs || isExpanded;
 
   return (
     <div
       ref={wrapperRef}
-      className={`w-full pb-5 md:py-10 relative 
-        ${fullMode ? "fixed inset-0 bg-black flex flex-col" : ""}`}
-      style={fullMode ? { zIndex: 1000 } : undefined}
+      className={
+        `w-full pb-5 md:py-10 relative ${
+          fullMode ? "fixed inset-0 bg-white flex flex-col" : ""
+        }`
+      }
+      style={fullMode ? { zIndex: 1000, overflow: "hidden" } : undefined}
     >
-      {/* Tiêu đề */}
-      <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen text-center font-dancing sm:pb-4">
+      <h2
+        className={
+          `text-3xl sm:text-5xl font-bold text-darkgreen text-center font-dancing sm:pb-4 ${
+            fullMode ? "text-white bg-black p-2" : ""
+          }`
+        }
+      >
         Mặt Bằng Tổng Thể
       </h2>
 
-      {/* Slider flex-1 khi fullScreen/CSS */}
       <Swiper
         modules={[Navigation, Pagination]}
         slidesPerView={1}
@@ -70,8 +72,11 @@ export default function FloorSlider() {
         allowTouchMove={false}
         speed={700}
         loop={true}
-        className={`w-full mx-auto rounded-xl shadow-xl relative 
-          ${fullMode ? "flex-1" : ""}`}
+        className={
+          `w-full mx-auto rounded-xl shadow-xl relative ${
+            fullMode ? "flex-1" : ""
+          }`
+        }
       >
         {floorPlans.map((plan, idx) => (
           <SwiperSlide key={idx}>
@@ -79,10 +84,13 @@ export default function FloorSlider() {
               src={plan.src}
               alt={plan.alt}
               onClick={openFullscreen}
-              className={`cursor-zoom-in w-full 
-                ${fullMode 
-                  ? "h-full w-auto object-contain mx-auto" 
-                  : "h-auto object-cover"}`}
+              className={
+                `cursor-zoom-in ${
+                  fullMode
+                    ? "h-full w-auto object-contain mx-auto"
+                    : "w-full h-auto object-cover"
+                }`
+              }
             />
           </SwiperSlide>
         ))}
@@ -91,7 +99,6 @@ export default function FloorSlider() {
         <div className="swiper-button-next !text-darkgreen" />
       </Swiper>
 
-      {/* Nút ✕ cố định */}
       {fullMode && (
         <button
           onClick={exitFullscreen}
