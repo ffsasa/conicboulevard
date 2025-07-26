@@ -12,50 +12,62 @@ const Home = () => {
         <section id="thongtin" className="max-w-screen-2xl mx-auto sm:pt-10">
           <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-start">
             {/* Khối bên trái chứa tiêu đề + nội dung */}
-            <div className="flex-1 flex flex-col">
-              <h2 className="text-3xl sm:text-5xl font-bold pb-2 text-black font-dancing">Tổng Quan Dự Án</h2>
-              <h2 className="text-2xl sm:text-4xl font-bold pb-4 text-darkgreen">CONIC BOULEVARD</h2>
+            <div className="w-full md:w-1/3 flex flex-col pt-8">
+              <h2
+                className="text-3xl sm:text-5xl font-bold pb-2 text-lightgreen"
+                style={{
+                  fontFamily: "Arial, sans-serif",
+                  fontStyle:  "italic"
+                }}
+              >
+                Tổng Quan Dự Án
+              </h2>
 
-              <div className="text-sm sm:text-2xl">
+              <div className="text-sm sm:text-2xl text-lightgreen pt-2">
                 <p>
-                  <strong>TỔNG DIỆN TÍCH:</strong> 5.3 ha<br />
-                  <strong>QUY MÔ:</strong> Gồm 2 phân khu<br />
-                  - 114 căn thấp tầng<br />
-                  - 2 khối căn hộ: 952 căn hộ + 24 căn shophouse<br />
+                  <strong>TỔNG DIỆN TÍCH: 5.3 ha</strong> 
                 </p>
 
-                <div className="pl-3 pt-2">
+                <div className="pt-4">
                   <p>
-                    <strong>Block A:</strong> 4 nguyên đơn, cao 15 tầng, 1 tầng hầm,<br />
-                    tổng số 420 căn hộ & 10 căn shophouse
-                  </p>
-                  <p>
-                    <strong>Block B:</strong> 5 nguyên đơn, cao 15 tầng, 1 tầng hầm,<br />
-                    tổng số 532 căn hộ & 14 căn shophouse
+                    <strong>QUY MÔ:</strong> Gồm 2 phân khu: 114 căn thấp tầng, 2 khối căn hộ: 952 căn hộ + 24 căn shophouse
                   </p>
                 </div>
 
-                <div className="pt-4 space-y-2">
-                  <p><strong>MẬT ĐỘ XÂY DỰNG:</strong> 28,7%</p>
+                <div className="pt-4">
+                  <p>
+                    <strong>- Block A:</strong> 4 nguyên đơn cao 15 tầng, 1 tầng hầm, tổng số 420 căn hộ & 10 căn shophouse
+                  </p>
+                </div>
+
+                <div className="pt-4">
+                  <p>
+                    <strong>- Block B:</strong> 5 nguyên đơn cao 15 tầng, 1 tầng hầm, tổng số 532 căn hộ & 14 căn shophouse
+                  </p>
+                </div>
+
+                <div className="pt-4 space-y-4">
+                  <p>
+                    <strong>MẬT ĐỘ XÂY DỰNG:</strong>{" "}
+                    <strong className="text-xl sm:text-4xl">28,7%</strong>
+                  </p>
                   <p><strong>HÌNH THỨC SỞ HỮU:</strong> Lâu dài</p>
-                  <p><strong>TIẾN ĐỘ DỰ ÁN:</strong> Dự kiến Quý II/2025</p>
+                  <p><strong>TIẾN ĐỘ DỰ ÁN:</strong></p>
+                  <p><strong>- Bàn giao nhà: Block B</strong> - 02/04/2025</p>
+                  <p className="pl-44"><strong>Block A – Quý </strong>04/2025</p>
+                  <p><strong>- Làm sổ hồng: </strong>02/06/2025</p>
                   <p><strong>VỊ TRÍ:</strong> Đ. Huỳnh Bá Chánh, Tân Kiên, H. Bình Chánh, TP. HCM</p>
                 </div>
               </div>
             </div>
 
             {/* Hình ảnh bên phải */}
-            <div className="flex-1 h-full self-stretch">
+            <div className="w-full md:w-2/3 h-full self-stretch">
               <FullscreenImage
                 src="/thongtin.jpg"
                 alt="Thông tin dự án"
                 className="w-full h-auto object-cover rounded-xl shadow-lg"
               />
-              {/* <img
-                src="/thongtin.jpg"
-                alt="Thông tin dự án"
-                className="w-full h-full object-cover rounded-xl shadow-lg"
-              /> */}
             </div>
           </div>
 
@@ -75,71 +87,82 @@ const Home = () => {
         <section id="vitri" className="max-w-screen-2xl mx-auto sm:pt-10">
           <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
             {/* Hình ảnh bên trái với dòng chữ bên dưới */}
-            <div className="w-[65%] w-full">
+            <div className="w-full md:w-[60%]">
               <FullscreenImage
                 src="/vitri.jpg"
                 alt="Vị trí Conic Boulevard"
-                className="shadow-lg w-full max-w-3xl object-cover"
+                className="shadow-lg w-full object-cover rounded-xl"
               />
               <p className="text-sm sm:text-2xl text-darkgreen font-dancing mt-3 text-center">
                 ĐỦ GẦN PHỒN HOA - ĐỦ XA VỘI VÃ
               </p>
             </div>
+
             {/* Văn bản bên phải canh giữa theo chiều cao */}
-            <div className="w-[35%] w-full">
-              <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">Vị Trí Đắc Địa</h2>
-              <h1 className="text-2xl sm:text-4xl text-darkgreen font-dancing">Đủ gần</h1>
-              <p className="text-sm sm:text-2xl">
-                • Năm ngay nút giao Võ Văn Kiệt với Quốc Lộ 1A <br />
-                • Kết nối Quận 5, 6, 1 qua Đại Lộ Võ Văn Kiệt. <br />
-                • Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A. <br />
+            <div className="w-full md:w-[40%] pl-16">
+              <h2 className="text-3xl sm:text-6xl font-bold text-darkgreen font-dancing">
+                Vị Trí Đắc Địa
+              </h2>
+              <h1 className="text-2xl sm:text-5xl text-darkgreen font-dancing">
+                Đủ gần
+              </h1>
+              <p className="text-sm sm:text-3xl space-y-2">
+                • Năm ngay nút giao Võ Văn Kiệt với Quốc Lộ 1A<br />
+                • Kết nối Quận 5, 6, 1 qua Đại Lộ Võ Văn Kiệt.<br />
+                • Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A.<br />
+                • Kết nối với 7 Quận, Huyện qua tuyến kênh Tham Lương – Bến Cát – Rạch Nước Lên.<br />
               </p>
-              <h1 className="text-2xl sm:text-4xl text-darkgreen font-dancing md:pt-4">Đủ xa</h1>
-              <p className="text-sm sm:text-2xl">
+              <h1 className="text-2xl sm:text-5xl text-darkgreen font-dancing mt-4">
+                Đủ xa
+              </h1>
+              <p className="text-sm sm:text-3xl">
                 • Nằm biệt lập trong khu dân cư 584 đường Huỳnh Bá Chánh, xã Tân Kiên, Huyện Bình Chánh.
               </p>
             </div>
           </div>
+
           <div className="flex flex-col md:flex-row gap-3 md:gap-10 pt-3 md:pt-10 items-center">
             {/* Văn bản bên trái */}
-            <div className="w-[35%] w-full">
+            <div className="w-full md:w-[25%]">
               <h3 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing md:pb-2">
                 Vị trí chiến lược, <br className="hidden md:inline" />
                 đón đầu tương lai
               </h3>
               <p className="pb-2 text-sm sm:text-2xl">
-                Conic Boulevard tọa lạc kiêu hãnh tại khu Tây Nam TP.HCM,
-                đón đầu sự phát triển của khu vực thông qua hàng loạt dự án hạ tầng giao thông nghìn tỷ.
-                Đây không chỉ là nơi kết nối các tuyến giao thông trọng điểm mà còn là đầu mối thông thương liên vùng,
-                đảm bảo khả năng di chuyển thuận tiện trong khu vực và liên tỉnh.
+                Conic Boulevard Tọa lạc kiêu hãnh tại khu Tây 
+                Nam TP.HCM, đón đầu sự phát triển của khu vực 
+                thông qua hàng loạt dự án hạ tầng giao thông 
+                nghìn tỷ. Đây không chỉ là nơi kết nối các tuyến 
+                giao thông trọng điểm mà còn là đầu mối thông 
+                thương liên vùng, đảm bảo khả năng di chuyển 
+                thuận tiện trong khu vực và liên tỉnh.
               </p>
               <p className="pb-2 text-sm sm:text-2xl">
-                Đón đầu quy hoạch Bình Chánh - đầu mối quan trọng kết nối TP.HCM với các tỉnh ĐBSCL
+                Đón đầu quy hoạch Bình Chánh – đầu mối quan trọng kết nối TP.HCM với các tỉnh ĐBSCL
               </p>
               <ul className="ml-2 list-disc pl-5 text-sm sm:text-2xl">
-                <li>Đón đầu các dự án hạ tầng giao thông trọng điểm: Metro 3A (Bến Thành – Tân Kiên), tuyến đường sắt cao tốc TP.HCM -Cần Thơ</li>
-                <li>Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương -Rạch Nước Lên</li>
+                <li>
+                  Đón đầu các dự án hạ tầng giao thông trọng điểm: Metro 3A (Bến Thành – Tân Kiên), tuyến đường sắt cao tốc TP.HCM -Cần Thơ
+                </li>
+                <li>
+                  Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương –Rạch Nước Lên
+                </li>
               </ul>
             </div>
-            <div className="w-[65%] w-full">
-              <FullscreenImage
-                src="/map.png"
-                alt="Vị trí Conic Boulevard"
-                className="shadow-lg w-full max-w-3xl object-cover"
-              />
+
+            {/* Ảnh bên phải */}
+            <div className="w-full md:w-[75%]">
+              <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: "75%" }}>
+                <FullscreenImage
+                  src="/map.png"
+                  alt="Vị trí Conic Boulevard"
+                  className="absolute inset-0 w-full h-full object-cover shadow-lg"
+                />
+              </div>
             </div>
           </div>
+
           <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
-            {/* <div className="w-full max-w-5xl aspect-video">
-              <iframe
-                className="w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/7fXVvcROavY"
-                title="Video giới thiệu vị trí đắc địa"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div> */}
             <FullscreenVideo
               videoUrl="https://www.youtube.com/embed/7fXVvcROavY?enablejsapi=1"
               className="w-full max-w-5xl aspect-video"
