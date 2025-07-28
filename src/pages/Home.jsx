@@ -221,7 +221,7 @@ const Home = () => {
         </section>
 
         <section id="matbang" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen text-center sm:pt-4 sm:mb-2">
+          <h2 className="text-md sm:text-4xl font-bold text-darkgreen text-center sm:pt-4 sm:mb-2">
             Mặt Bằng Tầng Block A
           </h2>
           <div className="w-full">
@@ -231,7 +231,7 @@ const Home = () => {
               className="shadow-lg w-full object-cover"
             />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen text-center sm:pt-4 sm:mb-2">
+          <h2 className="text-md sm:text-4xl font-bold text-darkgreen text-center sm:pt-4 sm:mb-2">
             Mặt Bằng Tầng Block B
           </h2>
           <div className="w-full">
