@@ -185,14 +185,10 @@ const Home = () => {
 
           <div className="w-full flex justify-center">
             <div className="pt-3 md:pt-8 w-full max-w-5xl aspect-video">
-              <iframe
-                className="w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/X_acjcDRyU8"
-                title="Video giới thiệu tiện ích nội khu"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <FullscreenVideo
+                videoUrl="https://www.youtube.com/embed/413yjNZiDt0?enablejsapi=1"
+                className="w-full max-w-5xl aspect-video"
+              />
             </div>
           </div>
 
@@ -292,38 +288,41 @@ const Home = () => {
             <div className="w-full flex flex-col items-center">
               {/* Video 1 */}
               <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
-                <iframe
+                <FullscreenVideo
+                  videoUrl="https://www.youtube.com/embed/OFJ5rR0HC4I?enablejsapi=1"
                   className="w-full h-full rounded-xl shadow-lg"
-                  src="https://www.youtube.com/embed/4rvx9gn-1UI"
-                  title="Video giới thiệu căn hộ"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                />
               </div>
-              <p className="text-sm sm:text-base italic text-gray-700 mt-4 text-center">
+              <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
                 Video căn hộ 2 phòng ngủ diện tích 84,32 m²
               </p>
 
               {/* Video 2 */}
               <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
-                <iframe
+                <FullscreenVideo
+                  videoUrl="https://www.youtube.com/embed/SFeTqRhQqtI?enablejsapi=1"
                   className="w-full h-full rounded-xl shadow-lg"
-                  src="https://www.youtube.com/embed/0Mc6heGCs2Q"
-                  title="Video giới thiệu căn hộ"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                />
               </div>
-              <p className="text-sm sm:text-base italic text-gray-700 mt-4 text-center">
+              <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
+                Video căn hộ 2 phòng ngủ diện tích 85 m²
+              </p>
+
+              {/* Video 3 */}
+              <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
+                <FullscreenVideo
+                  videoUrl="https://www.youtube.com/embed/kGw5bJ0FRCM?enablejsapi=1"
+                  className="w-full h-full rounded-xl shadow-lg"
+                />
+              </div>
+              <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
                 Video căn hộ 3 phòng ngủ diện tích 114m²
               </p>
             </div>
           </div>
         </section>
 
-        <section id="tiendo" className="max-w-screen-2xl mx-auto sm:pt-10">
+        <section id="tiendo" className="max-w-screen-2xl mx-auto sm:pt-6">
           <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing md:pb-3">Tiến Độ</h2>
           <p className="text-sm sm:text-2xl sm:pb-2">
             CĂN HỘ <strong>CONIC BOULEVARD</strong> ĐÃ HOÀN THIỆN - SẴN SÀNG BÀN GIAO TỪ <strong>THÁNG 4/2025</strong>. <br />
@@ -339,15 +338,11 @@ const Home = () => {
           </h3>
 
           <div className="w-full flex justify-center">
-            <div className="max-w-5xl w-full aspect-video">
-              <iframe
-                className="w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/PeD2KdxiGWA"
-                title="Video thực tế căn hộ Conic Boulevard"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+            <div className="sm:pt-2 max-w-5xl w-full aspect-video">
+              <FullscreenVideo
+                  videoUrl="https://www.youtube.com/embed/uALGT60zg40?enablejsapi=1"
+                  className="w-full h-full rounded-xl shadow-lg"
+                />
             </div>
           </div>
 
@@ -401,7 +396,7 @@ const Home = () => {
                   Diện tích: <span className="text-white font-normal">114 m²</span>
                 </div>
                 <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  GIÁ BÁN: Chỉ từ 3,05 tỷ VNĐ
+                  GIÁ BÁN: Chỉ từ 3,68 tỷ VNĐ
                 </div>
               </div>
             </div>
@@ -422,7 +417,7 @@ const Home = () => {
 
         <section id="pttt" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
           <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing text-center">
-            Phương Thức Thanh Toán Mới Nhất Tháng 4/2025
+            Phương Thức Thanh Toán Mới Nhất Tháng 8/2025
           </h2>
 
           <div className="w-[100%] w-full py-2 md:py-5">
