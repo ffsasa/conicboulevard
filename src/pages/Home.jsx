@@ -328,11 +328,6 @@ const Home = () => {
           <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing md:pb-3">Tiến Độ</h2>
           <p className="text-sm sm:text-2xl sm:pb-2">
             CĂN HỘ <strong>CONIC BOULEVARD</strong> ĐÃ HOÀN THIỆN - SẴN SÀNG BÀN GIAO TỪ <strong>THÁNG 4/2025</strong>. <br />
-            Với cương vị <strong>chủ đầu tư</strong>, chúng tôi cam kết xây dựng đúng quy chuẩn và đúng tiến độ,
-            minh bạch về pháp lý, đảm bảo quyền lợi cho những cư dân tương lai của dự án.
-            Chúng tôi cũng cam kết đồng hành cùng cư dân tương lai, đảm bảo cuộc sống tốt đẹp.
-            Chúng tôi tin tưởng rằng <strong>Conic Boulevard</strong> sẽ là một biểu tượng mới của <strong>Bình Chánh</strong>,
-            mang lại giá trị thật cho tất cả khách hàng của chúng tôi.
           </p>
 
           <h3 className="text-sm sm:text-2xl font-semibold text-darkgreen mb-2">
