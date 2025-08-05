@@ -8,7 +8,7 @@
           "value": "conicboulevard.pro.vn"
         }
       ],
-      "destination": "https://www.conicboulevard.pro.vn/:1",
+      "destination": "https://www.conicboulevard.pro.vn/$1",
       "permanent": true
     },
     {
@@ -19,7 +19,7 @@
           "value": "conicboulevard.vercel.app"
         }
       ],
-      "destination": "https://www.conicboulevard.pro.vn/:1",
+      "destination": "https://www.conicboulevard.pro.vn/$1",
       "permanent": true
     }
   ]
