@@ -449,7 +449,7 @@ const Home = () => {
         </section>
         {/* Nút Zalo */}
         <a
-          href="https://zalo.me/0845588589"
+          href="https://zalo.me/0941841024"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-50"
@@ -462,7 +462,7 @@ const Home = () => {
         </a>
 
         {/* Nút Gọi điện */}
-        <a href="tel:0845588589" className="fixed bottom-5 right-4 md:bottom-5 md:right-6 z-50">
+        <a href="tel:0941841024" className="fixed bottom-5 right-4 md:bottom-5 md:right-6 z-50">
           <img
             src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
             alt="Call"
