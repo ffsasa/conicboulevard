@@ -22,7 +22,7 @@ const Footer = () => {
             <strong>Địa chỉ Phòng giao dịch:</strong> 677/1 Điện Biên Phủ, P.25, Q.Bình Thạnh, TP.HCM
           </p>
           <p>
-            <strong>Hotline/Zalo:</strong> <a href="tel:0845588589" className="text-green-700 hover:underline">0845.588.589</a>
+            <strong>Hotline/Zalo:</strong> <a href="tel:0941841024" className="text-green-700 hover:underline">0941.841.024</a>
           </p>
         </div>
       </section>      </footer>
