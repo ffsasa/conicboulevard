@@ -19,15 +19,20 @@ export default function RegisterForm() {
 
     try {
       const res = await sendConsultation(data);
-      if (res.ok) {
+      if (res.status == 201) {
         alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
         form.current.reset();
-      } else {
-        alert("Gửi thất bại, vui lòng thử lại sau.");
-      }
+      } 
     } catch (error) {
-      console.error(error);
-      alert("Gửi thất bại, vui lòng thử lại sau.");
+      if(error.response){
+        alert("Đăng ký thất bại: " + (error.response.data.message || "vui lòng thử lại sau."));
+      } else if (error.request) {
+      // Request gửi đi nhưng không có phản hồi
+      alert("Không kết nối được đến server.");
+      } else {
+      // Lỗi khác
+      alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+      }
     }
   };
 
