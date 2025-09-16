@@ -10,7 +10,7 @@ export default function RegisterForm() {
     const formData = new FormData(formRef.current);
 
     let phone = formData.get("phoneNumber");
-    if(phone && !phone.startsWith("0")){
+    if(phone && !phone.startsWith("0") && !phone.startsWith("+84")){
       phone = "0" + phone;
       formData.set("phoneNumber", phone);
     }
@@ -25,7 +25,7 @@ export default function RegisterForm() {
       } 
     } catch (error) {
       if(error.response){
-        alert("Đăng ký thất bại: " + (error.response.data.message || "vui lòng thử lại sau."));
+        alert("Đăng ký thất bại: " + (error.response.data.errors || "vui lòng thử lại sau."));
       } else if (error.request) {
       // Request gửi đi nhưng không có phản hồi
       alert("Không kết nối được đến server.");

@@ -10,7 +10,7 @@ export default function RegisterForm() {
     const formData = new FormData(form.current);
 
     let phone = formData.get("phoneNumber");
-    if (phone && !phone.startsWith("0")){
+    if (phone && !phone.startsWith("0") && !phone.startsWith("+84")){
       phone = "0" + phone;
       formData.set("phoneNumber", phone);
     }
