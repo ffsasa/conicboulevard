@@ -1,31 +1,34 @@
 import { FaPaperPlane } from "react-icons/fa";
 import { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { sendConsultation } from "../service/consultationApi";
 
 export default function RegisterForm() {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    const formData = new FormData(form.current);
 
-    emailjs
-      .sendForm(
-        "service_8rcufbj",     // 🔁 thay bằng service ID của bạn
-        "template_ox5ruiq",    // 🔁 thay bằng template ID của bạn
-        form.current,
-        "hCI-_txumfN6OAFVB"      // 🔁 thay bằng public key
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
-          form.current.reset(); // reset form sau khi gửi
-        },
-        (error) => {
-          console.error(error.text);
-          alert("Gửi thất bại, vui lòng thử lại sau.");
-        }
-      );
+    let phone = formData.get("phoneNumber");
+    if (phone && !phone.startsWith("0")){
+      phone = "0" + phone;
+      formData.set("phoneNumber", phone);
+    }
+
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await sendConsultation(data);
+      if (res.ok) {
+        alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
+        form.current.reset();
+      } else {
+        alert("Gửi thất bại, vui lòng thử lại sau.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Gửi thất bại, vui lòng thử lại sau.");
+    }
   };
 
   return (
@@ -40,14 +43,14 @@ export default function RegisterForm() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <input
               type="text"
-              name="name"
+              name="customerName"
               placeholder="Họ tên (*)"
               required
               className="w-full sm:w-[48%] px-4 py-3 rounded-full bg-green-200 bg-opacity-50 text-black border border-green-400"
             />
             <input
               type="tel"
-              name="phone"
+              name="phoneNumber"
               placeholder="Điện thoại (*)"
               required
               className="w-full sm:w-[48%] px-4 py-3 rounded-full bg-green-200 bg-opacity-50 text-black border border-green-400"
@@ -56,7 +59,7 @@ export default function RegisterForm() {
 
           <div className="w-full overflow-hidden">
             <select
-              name="type"
+              name="consultNeed"
               required
               defaultValue=""
               className="w-full px-4 py-3 rounded-2xl bg-green-200 bg-opacity-50 text-black border border-green-400"
@@ -68,6 +71,8 @@ export default function RegisterForm() {
               <option value="Căn hộ 3 phòng ngủ">Căn hộ 3 phòng ngủ</option>
             </select>
           </div>
+
+          <input name="projectName" type="hidden" value={"conicboulevard"} />
 
           <button
             type="submit"

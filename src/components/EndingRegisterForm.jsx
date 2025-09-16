@@ -1,30 +1,34 @@
 import { useRef } from "react";
 import { FaPaperPlane } from "react-icons/fa";
-import emailjs from "@emailjs/browser";
+import { sendConsultation } from "../service/consultationApi";
 
 export default function RegisterForm() {
   const formRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(formRef.current);
 
-    emailjs
-      .sendForm(
-        "service_8rcufbj",     // 🔁 thay bằng service ID của bạn
-        "template_ox5ruiq",    // 🔁 thay bằng template ID của bạn
-        formRef.current,
-        "hCI-_txumfN6OAFVB"
-      )
-      .then(
-        (result) => {
-          alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
-          formRef.current.reset();
-        },
-        (error) => {
-          alert("Có lỗi xảy ra, vui lòng thử lại sau.");
-          console.error(error.text);
-        }
-      );
+    let phone = formData.get("phoneNumber");
+    if(phone && !phone.startsWith("0")){
+      phone = "0" + phone;
+      formData.set("phoneNumber", phone);
+    }
+
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await sendConsultation(data);
+      if (res.ok) {
+        alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
+        formRef.current.reset();
+      } else {
+        alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+    }
   };
 
   return (
@@ -50,30 +54,32 @@ export default function RegisterForm() {
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
-            name="name"
+            name="customerName"
             placeholder="Họ và Tên"
             required
             className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-90 text-black border border-green-400 focus:outline-none"
           />
           <input
             type="tel"
-            name="phone"
+            name="phoneNumber"
             placeholder="Số điện thoại"
             required
             className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-90 text-black border border-green-400 focus:outline-none"
           />
           <select
-            name="type"
+            name="consultNeed"
             required
             defaultValue=""
             className="w-full max-w-full truncate px-4 py-3 rounded-lg bg-white bg-opacity-90 text-black border border-green-400 focus:outline-none"
           >
-            <option value="" disabled hidden>
+           <option value="" disabled hidden>
               Mời quý khách chọn nhu cầu sản phẩm
             </option>
-            <option value="2pn">Căn hộ 2 phòng ngủ</option>
-            <option value="3pn">Căn hộ 3 phòng ngủ</option>
+            <option value="Căn hộ 2 phòng ngủ">Căn hộ 2 phòng ngủ</option>
+            <option value="Căn hộ 3 phòng ngủ">Căn hộ 3 phòng ngủ</option>
           </select>
+
+          <input name="projectName" type="hidden" value={"conicboulevard"} />
 
           <button
             type="submit"
