@@ -21,7 +21,7 @@ export default function RegisterForm() {
       const res = await sendConsultation(data);
       if (res.status == 201) {
         alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
-        form.current.reset();
+        formRef.current.reset();
       } 
     } catch (error) {
       if(error.response){
@@ -84,7 +84,7 @@ export default function RegisterForm() {
             <option value="Căn hộ 3 phòng ngủ">Căn hộ 3 phòng ngủ</option>
           </select>
 
-          <input name="projectName" type="hidden" value={"conicboulevard"} />
+          <input name="projectName" type="hidden" value={"Conic Boulevard"} />
 
           <button
             type="submit"

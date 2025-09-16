@@ -77,7 +77,7 @@ export default function RegisterForm() {
             </select>
           </div>
 
-          <input name="projectName" type="hidden" value={"conicboulevard"} />
+          <input name="projectName" type="hidden" value={"Conic Boulevard"} />
 
           <button
             type="submit"
