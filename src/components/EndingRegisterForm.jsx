@@ -3,24 +3,6 @@ import { FaPaperPlane } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { sendConsultation } from "../service/consultationApi";
 
-const highlightItems = [
-  {
-    id: "01",
-    title: "Căn hộ 2PN",
-    description: "Thiết kế tối ưu cho gia đình trẻ với không gian linh hoạt.",
-  },
-  {
-    id: "02",
-    title: "Căn hộ 3PN",
-    description: "Diện tích rộng rãi, tiện ích đầy đủ cho gia đình đa thế hệ.",
-  },
-  {
-    id: "03",
-    title: "Ưu đãi thanh toán",
-    description: "Hưởng chính sách chiết khấu cao cùng tiến độ đóng linh hoạt.",
-  },
-];
-
 export default function RegisterForm() {
   const formRef = useRef();
 
@@ -70,58 +52,24 @@ export default function RegisterForm() {
       </div>
 
       {/* Phần form */}
-      <div className="relative mx-auto flex max-w-6xl flex-col items-stretch gap-10 px-4 sm:px-6 md:flex-row">
-        {/* Khối thông tin bên trái */}
-        <div className="relative flex flex-1 flex-col justify-between overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-8 text-white shadow-[0_25px_60px_rgba(0,0,0,0.25)] backdrop-blur-sm">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 sm:px-6 md:flex-row md:items-stretch md:justify-center">
+        {/* Khối hình ảnh bên trái */}
+        <div className="relative flex-1 min-h-[360px] overflow-hidden rounded-[32px] border border-white/20 bg-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.25)] backdrop-blur-sm">
           <div className="pointer-events-none absolute -top-24 right-12 h-60 w-60 rounded-full bg-white/15 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-10 left-8 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
 
-          <div className="relative z-10 space-y-6 md:max-w-md">
-            <div className="flex items-start gap-4">
-              <span className="text-7xl font-extrabold leading-none text-lime-200 drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)]">
-                3
-              </span>
-              <div className="space-y-2">
-                <p className="text-sm font-semibold uppercase tracking-[0.4em] text-lime-100/80">
-                  tiêu chí tiên quyết
-                </p>
-                <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
-                  khi lựa chọn căn hộ Conic Boulevard
-                </h2>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              {highlightItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex items-start gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 shadow-[0_12px_32px_rgba(0,0,0,0.18)]"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-lg font-semibold text-white">
-                    {item.id}
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold text-white">{item.title}</p>
-                    <p className="text-sm text-lime-50/90">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="pointer-events-none absolute bottom-0 right-0 w-[280px] sm:w-[340px]">
-            <img
-              src="/promotion2.jpg"
-              alt="Phối cảnh dự án Conic Boulevard"
-              className="w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
-            />
-          </div>
+          <img
+            src="/promotion2.jpg"
+            alt="Phối cảnh dự án Conic Boulevard"
+            className="h-full w-full object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10" />
         </div>
 
         {/* Khối form bên phải */}
-        <div className="relative w-full md:w-[380px]">
+        <div className="relative flex flex-1 min-h-[360px]">
           <div className="absolute inset-0 rounded-[36px] bg-gradient-to-br from-white/60 via-white to-white/80 shadow-[0_30px_60px_rgba(0,0,0,0.25)]" />
-          <div className="relative rounded-[36px] border border-white/60 bg-white/95 px-6 py-8 text-center shadow-inner sm:px-10">
+          <div className="relative z-10 flex w-full flex-col justify-center rounded-[36px] border border-white/60 bg-white/95 px-6 py-8 text-center shadow-inner sm:px-10">
             <div className="mx-auto mb-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#9be5ae] to-[#2ea95d]" />
             <h3 className="text-2xl font-bold text-green-700 sm:text-3xl">
               Đăng ký liền tay
