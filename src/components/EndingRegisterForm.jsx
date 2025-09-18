@@ -52,7 +52,7 @@ export default function RegisterForm() {
       </div>
 
       {/* Phần form */}
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 sm:px-6 md:flex-row md:items-stretch md:justify-center">
+      <div className="relative mx-auto flex w-full flex-col items-center gap-6 px-4 sm:px-6 md:flex-row md:items-stretch md:justify-center">
         {/* Khối hình ảnh bên trái */}
         <div className="relative flex-1 min-h-[360px] overflow-hidden rounded-[32px] border border-white/20 bg-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.25)] backdrop-blur-sm">
           <div className="pointer-events-none absolute -top-24 right-12 h-60 w-60 rounded-full bg-white/15 blur-3xl" />
