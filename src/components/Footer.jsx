@@ -1,4 +1,5 @@
 import logo from '../assets/logo2.jpg';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -25,7 +26,13 @@ const Footer = () => {
             <strong>Hotline/Zalo:</strong> <a href="tel:0941841024" className="text-green-700 hover:underline">0941.841.024</a>
           </p>
         </div>
-      </section>      </footer>
+      <p className="mt-6 text-sm text-green-800">
+          <Link to="/privacy-policy" className="underline hover:text-green-900">
+            Chính sách bảo mật
+          </Link>
+        </p>
+      </section>
+    </footer>
   );
 };
 export default Footer;

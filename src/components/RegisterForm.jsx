@@ -1,5 +1,6 @@
 import { FaPaperPlane } from "react-icons/fa";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { sendConsultation } from "../service/consultationApi";
 
 export default function RegisterForm() {
@@ -86,6 +87,13 @@ export default function RegisterForm() {
             <FaPaperPlane />
             ĐĂNG KÝ
           </button>
+          <p className="text-xs sm:text-sm text-green-700 mt-2">
+            Bằng việc gửi form, bạn đồng ý với{' '}
+            <Link to="/privacy-policy" className="underline hover:text-green-900">
+              Chính sách bảo mật
+            </Link>
+            .
+          </p>
         </form>
       </div>
     </section>

@@ -1,22 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import logo from "../assets/logo2.jpg";
 import { Menu, X } from "lucide-react"; // Cần cài: `lucide-react`
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const menuItems = [
-    { id: "thongtin", label: "TỔNG QUAN" },
-    { id: "vitri", label: "VỊ TRÍ" },
-    { id: "tienich", label: "TIỆN ÍCH" },
-    { id: "matbang", label: "MẶT BẰNG" },
-    { id: "tiendo", label: "TIẾN ĐỘ" },
-    { id: "giaban", label: "GIÁ BÁN" },
-    { id: "pttt", label: "PTTT" },
-    { id: "lienhe", label: "LIÊN HỆ" },
-  ];
+  const menuItems = useMemo(() => ([
+    { id: "thongtin", label: "TỔNG QUAN", type: "section" },
+    { id: "vitri", label: "VỊ TRÍ", type: "section" },
+    { id: "tienich", label: "TIỆN ÍCH", type: "section" },
+    { id: "matbang", label: "MẶT BẰNG", type: "section" },
+    { id: "tiendo", label: "TIẾN ĐỘ", type: "section" },
+    { id: "giaban", label: "GIÁ BÁN", type: "section" },
+    { id: "pttt", label: "PTTT", type: "section" },
+    { id: "lienhe", label: "LIÊN HỆ", type: "section" },
+    { id: "privacy-policy", label: "CHÍNH SÁCH BẢO MẬT", type: "route", path: "/privacy-policy" },
+  ]), []);
+
+  const sectionItems = useMemo(
+    () => menuItems.filter((item) => item.type === "section"),
+    [menuItems],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +43,7 @@ const Navbar = () => {
         });
 
         const visible = [...visibleSections.entries()]
-          .filter(([_, isVisible]) => isVisible)
+          .filter(([, isVisible]) => isVisible)
           .map(([id]) => document.getElementById(id))
           .filter(Boolean)
           .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
@@ -56,12 +64,12 @@ const Navbar = () => {
     });
 
     return () => {
-      menuItems.forEach((item) => {
+      sectionItems.forEach((item) => {
         const section = document.getElementById(item.id);
         if (section) observer.unobserve(section);
       });
     };
-  }, []);
+  }, [sectionItems]);
 
   return (
     <nav className={`fixed w-full top-0 z-50 transition-colors duration-300 ${isScrolled ? "bg-lightgrey-150" : "bg-transparent"}`}>
@@ -80,21 +88,38 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-1 justify-center items-center space-x-6 lg:space-x-9 xl:space-x-12 mt-2 pr-6">
           {menuItems.map((item) => {
-            const isActive = activeSection === item.id;
+            const isSection = item.type === "section";
+            const isActive = isSection
+              ? activeSection === item.id
+              : location.pathname === item.path;
+            const linkClasses = `text-xl font-semibold font-sans whitespace-nowrap transition duration-300 ${isActive
+              ? "text-luxurybronze underline underline-offset-8 decoration-1"
+              : isScrolled
+                ? "text-green-900 hover:text-luxurybronze"
+                : "text-white hover:text-luxurybronze"
+            } hover:underline hover:underline-offset-8`;
+
+            if (isSection) {
+              const href = location.pathname === "/" ? `#${item.id}` : `/#${item.id}`;
+              return (
+                <a
+                  key={item.id}
+                  href={href}
+                  className={linkClasses}
+                >
+                  {item.label}
+                </a>
+              );
+            }
+
             return (
-              <a
+              <Link
                 key={item.id}
-                href={`#${item.id}`}
-                className={`text-xl font-semibold font-sans whitespace-nowrap transition duration-300
-                  ${isActive
-                    ? "text-luxurybronze underline underline-offset-8 decoration-1"
-                    : isScrolled
-                      ? "text-green-900 hover:text-luxurybronze"
-                      : "text-white hover:text-luxurybronze"
-                  } hover:underline hover:underline-offset-8`}
+                to={item.path}
+                className={linkClasses}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -110,17 +135,41 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className={`md:hidden bg-white px-6 py-4 space-y-4 shadow-md`}>
-          {menuItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`block text-base font-semibold transition duration-300 ${activeSection === item.id ? "text-luxurybronze underline underline-offset-8" : "text-green-900 hover:text-luxurybronze"
-                }`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {menuItems.map((item) => {
+            const isSection = item.type === "section";
+            const isActive = isSection
+              ? activeSection === item.id
+              : location.pathname === item.path;
+            const mobileClasses = `block text-base font-semibold transition duration-300 ${isActive
+              ? "text-luxurybronze underline underline-offset-8"
+              : "text-green-900 hover:text-luxurybronze"
+            }`;
+
+            if (isSection) {
+              const href = location.pathname === "/" ? `#${item.id}` : `/#${item.id}`;
+              return (
+                <a
+                  key={item.id}
+                  href={href}
+                  className={mobileClasses}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              );
+            }
+
+            return (
+              <Link
+                key={item.id}
+                to={item.path}
+                className={mobileClasses}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </nav>
