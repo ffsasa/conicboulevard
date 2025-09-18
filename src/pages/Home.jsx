@@ -248,7 +248,7 @@ const Home = () => {
             />
           </div>
           {/* <FloorSlider /> */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen pb-4 font-dancing">Thiết kế căn hộ hiện đại với diện tích lớn - sang trọng</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen pb-4 sm:pt-6 font-dancing">Thiết kế căn hộ hiện đại với diện tích lớn - sang trọng</h2>
           <p className="md:pb-1 text-sm sm:text-2xl">
             Conic Boulevard thiết lập tiêu chuẩn sống đẳng cấp với những căn hộ diện tích lớn từ 84,32m2 đến 114m2,
             đáp ứng nhu cầu ngày càng cao về không gian sống rộng, thoáng giữa trung tâm thành phố.
@@ -258,17 +258,67 @@ const Home = () => {
           <div className="w-full">
             <FullscreenImage
               src="/mauab.jpg"
-              alt="Mẫu căn hộ A và B"
+              alt="Mẫu căn hộ B"
               className="shadow-lg w-full object-cover"
             />
           </div>
+          <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
+            <FullscreenVideo
+              videoUrl="https://www.youtube.com/embed/p_3ldfGiZH8?enablejsapi=1"
+              className="w-full max-w-5xl aspect-video"
+            />
+          </div>
+          <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
+                Video thực tế căn hộ góc 2 phòng ngủ 84m² - Conic Boulevard
+          </p>
           <div className="w-full">
             <FullscreenImage
               src="/maucd.jpg"
-              alt="Mẫu căn hộ C và D"
+              alt="Mẫu căn hộ C1/C2"
               className="shadow-lg w-full object-cover"
             />
           </div>
+          <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
+            <FullscreenVideo
+              videoUrl="https://www.youtube.com/embed/RvNsxklD32w?enablejsapi=1"
+              className="w-full max-w-5xl aspect-video"
+            />
+          </div>
+          <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
+                Video thực tế căn hộ góc 2 phòng ngủ 85m² - Conic Boulevard
+          </p>
+          <div className="w-full">
+            <FullscreenImage
+              src="/maud.jpg"
+              alt="Mẫu căn hộ D"
+              className="shadow-lg w-full object-cover"
+            />
+          </div>
+          <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
+            <FullscreenVideo
+              videoUrl="https://www.youtube.com/embed/ME0pLer1Kx0?enablejsapi=1"
+              className="w-full max-w-5xl aspect-video"
+            />
+          </div>
+          <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
+                Video thực tế căn hộ góc 2 phòng ngủ 89m² - Conic Boulevard
+          </p>
+          <div className="w-full">
+            <FullscreenImage
+              src="/maua.jpg"
+              alt="Mẫu căn hộ A"
+              className="shadow-lg w-full object-cover"
+            />
+          </div>
+          <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
+            <FullscreenVideo
+              videoUrl="https://www.youtube.com/embed/pMdQXzUlJRI?enablejsapi=1"
+              className="w-full max-w-5xl aspect-video"
+            />
+          </div>
+          <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
+                Video thực tế căn hộ góc 3 phòng ngủ 114m² - Conic Boulevard
+          </p>
           <RegisterForm />
         </section>
 
@@ -294,7 +344,7 @@ const Home = () => {
             </div>
 
             <div className="w-full flex flex-col items-center">
-              {/* Video 1 */}
+
               <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
                 <FullscreenVideo
                   videoUrl="https://www.youtube.com/embed/OFJ5rR0HC4I?enablejsapi=1"
@@ -305,7 +355,7 @@ const Home = () => {
                 Video căn hộ 2 phòng ngủ diện tích 84,32 m²
               </p>
 
-              {/* Video 2 */}
+
               <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
                 <FullscreenVideo
                   videoUrl="https://www.youtube.com/embed/SFeTqRhQqtI?enablejsapi=1"
@@ -316,7 +366,7 @@ const Home = () => {
                 Video căn hộ 2 phòng ngủ diện tích 85 m²
               </p>
 
-              {/* Video 3 */}
+
               <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
                 <FullscreenVideo
                   videoUrl="https://www.youtube.com/embed/kGw5bJ0FRCM?enablejsapi=1"
@@ -371,7 +421,7 @@ const Home = () => {
             Cơ hội vàng sở hữu căn hộ Conic Boulevard với mức giá bất ngờ
           </h2>
 
-          <div className="sm:mt-5 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 justify-items-center">
+          <div className="sm:mt-5 grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-10 justify-items-center">
             {/* Card 2 phòng ngủ */}
             <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
               <img src="/giaban-2pn.jpg" alt="Căn hộ 2 phòng ngủ" className="w-full h-auto" />
@@ -380,10 +430,45 @@ const Home = () => {
                   Căn hộ 2 phòng ngủ
                 </div>
                 <div className="pt-4 text-sm font-semibold">
-                  Diện tích: <span className="text-white font-normal">84.6 m²</span>
+                  Diện tích: <span className="text-white font-normal">84 m²</span>
                 </div>
                 <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  GIÁ BÁN: Chỉ từ 2,25 tỷ VNĐ
+                  <p className="mb-1">GIÁ BÁN: 2,2 tỷ VNĐ (giao nhà thô)</p>
+                  <p className="mt-0">2,75 tỷ VNĐ (giao nhà hoàn thiện)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 phòng ngủ */}
+            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img src="/giaban-2pn2.jpg" alt="Căn hộ 2 phòng ngủ" className="w-full h-auto" />
+              <div className="bg-[#a8844e] p-5 text-white">
+                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
+                  Căn hộ 2 phòng ngủ
+                </div>
+                <div className="pt-4 text-sm font-semibold">
+                  Diện tích: <span className="text-white font-normal">85 m²</span>
+                </div>
+                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
+                  <p className="mb-1">GIÁ BÁN: 2,1 tỷ VNĐ (giao nhà thô)</p>
+                  <p className="mt-0">2,55 tỷ VNĐ (giao nhà hoàn thiện)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 phòng ngủ */}
+            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img src="/giaban-2pn3.jpg" alt="Căn hộ 2 phòng ngủ" className="w-full h-auto" />
+              <div className="bg-[#a8844e] p-5 text-white">
+                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
+                  Căn hộ 2 phòng ngủ
+                </div>
+                <div className="pt-4 text-sm font-semibold">
+                  Diện tích: <span className="text-white font-normal">89 m²</span>
+                </div>
+                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
+                  <p className="mb-1">GIÁ BÁN: 2,8 tỷ VNĐ (giao nhà thô)</p>
+                  <p className="mt-0">3,15 tỷ VNĐ (giao nhà hoàn thiện)</p>
                 </div>
               </div>
             </div>
@@ -399,13 +484,29 @@ const Home = () => {
                   Diện tích: <span className="text-white font-normal">114 m²</span>
                 </div>
                 <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  GIÁ BÁN: Chỉ từ 3,68 tỷ VNĐ
+                  <p className="mb-1">GIÁ BÁN: 3,3 tỷ VNĐ (giao nhà thô)</p>
+                  <p className="mt-0">3,15 tỷ VNĐ (giao nhà hoàn thiện)</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl text-center text-luxurybronze font-allura pt-6 md:pt-16">
+          <div className="pt-4">
+            <p className="text-sm sm:text-2xl sm:pb-2">
+              Giá bán đấn nền dự án Conic Boulevard 5m x 20m = 100m²: 
+            </p>
+            <ul className="list-none ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-2xl">
+              <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                5 tỷ ( Mặt tiền đường số 1 lộ giới 16m)
+              </li>
+              <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                7 tỷ ( Mặt tiền đường nội khu – đói diện công viên) 
+              </li>
+            </ul>
+          </div>
+          
+          
+          <h2 className="text-3xl md:text-4xl text-center text-luxurybronze font-allura pt-6 md:pt-10">
             Đột phá với mức giá rẻ nhất thị trường khu Tây
           </h2>
 

@@ -33,15 +33,16 @@ const FullscreenImage = ({ src, alt, className = "" }) => {
   return (
     <>
       <button
+        type="button"
         onClick={() => setIsFullscreen(true)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="p-0 border-none bg-transparent"
+        className="block w-full p-0 border-none bg-transparent"
       >
         <img
           src={src}
           alt={alt}
-          className={`cursor-pointer ${className}`}
+          className={`block w-full cursor-pointer ${className}`}
         />
       </button>
 

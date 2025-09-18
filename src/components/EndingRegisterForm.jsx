@@ -3,6 +3,24 @@ import { FaPaperPlane } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { sendConsultation } from "../service/consultationApi";
 
+const highlightItems = [
+  {
+    id: "01",
+    title: "Căn hộ 2PN",
+    description: "Thiết kế tối ưu cho gia đình trẻ với không gian linh hoạt.",
+  },
+  {
+    id: "02",
+    title: "Căn hộ 3PN",
+    description: "Diện tích rộng rãi, tiện ích đầy đủ cho gia đình đa thế hệ.",
+  },
+  {
+    id: "03",
+    title: "Ưu đãi thanh toán",
+    description: "Hưởng chính sách chiết khấu cao cùng tiến độ đóng linh hoạt.",
+  },
+];
+
 export default function RegisterForm() {
   const formRef = useRef();
 
@@ -11,7 +29,7 @@ export default function RegisterForm() {
     const formData = new FormData(formRef.current);
 
     let phone = formData.get("phoneNumber");
-    if(phone && !phone.startsWith("0") && !phone.startsWith("+84")){
+    if (phone && !phone.startsWith("0") && !phone.startsWith("+84")) {
       phone = "0" + phone;
       formData.set("phoneNumber", phone);
     }
@@ -23,95 +41,156 @@ export default function RegisterForm() {
       if (res.status == 201) {
         alert("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
         formRef.current.reset();
-      } 
+      }
     } catch (error) {
-      if(error.response){
-        alert("Đăng ký thất bại: " + (error.response.data.errors || "vui lòng thử lại sau."));
+      if (error.response) {
+        alert(
+          "Đăng ký thất bại: " +
+            (error.response.data.errors || "vui lòng thử lại sau."),
+        );
       } else if (error.request) {
-      // Request gửi đi nhưng không có phản hồi
-      alert("Không kết nối được đến server.");
+        // Request gửi đi nhưng không có phản hồi
+        alert("Không kết nối được đến server.");
       } else {
-      // Lỗi khác
-      alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+        // Lỗi khác
+        alert("Có lỗi xảy ra, vui lòng thử lại sau.");
       }
     }
   };
 
   return (
     <section
-      className="bg-gradient-to-b from-green-400 to-green-100 py-8 px-4 flex flex-col md:flex-row items-stretch"
       id="dangky2"
+      className="relative overflow-hidden bg-gradient-to-br from-[#0d5e2b] via-[#1aa250] to-[#7ede91] py-14"
     >
       {/* Phần ảnh */}
-      <div className="w-full md:w-7/12 mb-6 md:mb-0">
-        <img
-          src="/promotion2.jpg"
-          alt="Promotion"
-          className="shadow-lg w-full h-auto md:h-full object-contain rounded-xl"
-        />
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-white/20 blur-3xl" />
+        <div className="absolute -bottom-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
       </div>
 
       {/* Phần form */}
-      <div className="w-full md:w-5/12 max-w-md mx-auto bg-white bg-opacity-80 rounded-xl shadow-lg px-4 py-6 sm:px-6 sm:py-8 text-center flex flex-col justify-center">
-        <h2 className="text-1xl md:text-3xl font-bold text-green-800 mb-6">
-          Đăng ký liền tay <br /> nhận ngay chiết khấu
-        </h2>
+      <div className="relative mx-auto flex max-w-6xl flex-col items-stretch gap-10 px-4 sm:px-6 md:flex-row">
+        {/* Khối thông tin bên trái */}
+        <div className="relative flex flex-1 flex-col justify-between overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-8 text-white shadow-[0_25px_60px_rgba(0,0,0,0.25)] backdrop-blur-sm">
+          <div className="pointer-events-none absolute -top-24 right-12 h-60 w-60 rounded-full bg-white/15 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-10 left-8 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
 
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            name="customerName"
-            placeholder="Họ và Tên"
-            required
-            className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-90 text-black border border-green-400 focus:outline-none"
-          />
-          <input
-            type="tel"
-            name="phoneNumber"
-            placeholder="Số điện thoại"
-            required
-            className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-90 text-black border border-green-400 focus:outline-none"
-          />
-          <select
-            name="consultNeed"
-            required
-            defaultValue=""
-            className="w-full max-w-full truncate px-4 py-3 rounded-lg bg-white bg-opacity-90 text-black border border-green-400 focus:outline-none"
-          >
-           <option value="" disabled hidden>
-              Mời quý khách chọn nhu cầu sản phẩm
-            </option>
-            <option value="Căn hộ 2 phòng ngủ">Căn hộ 2 phòng ngủ</option>
-            <option value="Căn hộ 3 phòng ngủ">Căn hộ 3 phòng ngủ</option>
-          </select>
+          <div className="relative z-10 space-y-6 md:max-w-md">
+            <div className="flex items-start gap-4">
+              <span className="text-7xl font-extrabold leading-none text-lime-200 drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)]">
+                3
+              </span>
+              <div className="space-y-2">
+                <p className="text-sm font-semibold uppercase tracking-[0.4em] text-lime-100/80">
+                  tiêu chí tiên quyết
+                </p>
+                <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
+                  khi lựa chọn căn hộ Conic Boulevard
+                </h2>
+              </div>
+            </div>
 
-          <input name="projectName" type="hidden" value={"Conic Boulevard"} />
+            <div className="space-y-4">
+              {highlightItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-start gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 shadow-[0_12px_32px_rgba(0,0,0,0.18)]"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-lg font-semibold text-white">
+                    {item.id}
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-white">{item.title}</p>
+                    <p className="text-sm text-lime-50/90">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <button
-            type="submit"
-            className="w-full mt-4 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full inline-flex items-center justify-center gap-2 transition-all"
-          >
-            <FaPaperPlane />
-            Đăng Ký Ngay
-          </button>
-          <p className="text-xs sm:text-sm text-green-700 mt-2">
-            Bằng việc gửi form, bạn đồng ý với{' '}
-            <Link to="/privacy-policy" className="underline hover:text-green-900">
-              Chính sách bảo mật
-            </Link>
-            .
-          </p>
-        </form>
+          <div className="pointer-events-none absolute bottom-0 right-0 w-[280px] sm:w-[340px]">
+            <img
+              src="/promotion2.jpg"
+              alt="Phối cảnh dự án Conic Boulevard"
+              className="w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
+            />
+          </div>
+        </div>
 
-        <div className="mt-6 text-left text-green-800 text-sm sm:text-lg leading-relaxed">
-          <h3 className="font-bold mb-2">QUYỀN LỢI ĐĂNG KÝ THÔNG TIN</h3>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Cung cấp những thông tin nhanh chóng & cập nhật mới nhất từ chủ đầu tư.</li>
-            <li>Hỗ trợ quý khách tìm được căn đẹp nhất.</li>
-            <li>Cung cấp bảng giá gốc và tư vấn căn phù hợp với ngân sách.</li>
-            <li>Nhận được chính sách tốt nhất thị trường.</li>
-            <li>Hỗ trợ làm thủ tục trực tiếp với chủ đầu tư, trước và sau bán hàng.</li>
-          </ul>
+        {/* Khối form bên phải */}
+        <div className="relative w-full md:w-[380px]">
+          <div className="absolute inset-0 rounded-[36px] bg-gradient-to-br from-white/60 via-white to-white/80 shadow-[0_30px_60px_rgba(0,0,0,0.25)]" />
+          <div className="relative rounded-[36px] border border-white/60 bg-white/95 px-6 py-8 text-center shadow-inner sm:px-10">
+            <div className="mx-auto mb-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#9be5ae] to-[#2ea95d]" />
+            <h3 className="text-2xl font-bold text-green-700 sm:text-3xl">
+              Đăng ký liền tay
+              <br />
+              nhận ngay chiết khấu
+            </h3>
+
+            <form ref={formRef} onSubmit={handleSubmit} className="mt-6 space-y-4 text-left">
+              <input
+                type="text"
+                name="customerName"
+                placeholder="Họ và Tên"
+                required
+                className="w-full rounded-full border border-green-200/80 bg-white/90 px-5 py-3 text-sm font-medium text-green-900 shadow-[0_10px_30px_rgba(46,169,93,0.12)] outline-none transition focus:border-green-500 focus:ring-4 focus:ring-green-200/70"
+              />
+              <input
+                type="tel"
+                name="phoneNumber"
+                placeholder="Số điện thoại"
+                required
+                className="w-full rounded-full border border-green-200/80 bg-white/90 px-5 py-3 text-sm font-medium text-green-900 shadow-[0_10px_30px_rgba(46,169,93,0.12)] outline-none transition focus:border-green-500 focus:ring-4 focus:ring-green-200/70"
+              />
+              <div className="relative">
+                <select
+                  name="consultNeed"
+                  required
+                  defaultValue=""
+                  className="w-full appearance-none rounded-full border border-green-200/80 bg-white/90 px-5 py-3 text-sm font-medium text-green-900 shadow-[0_10px_30px_rgba(46,169,93,0.12)] outline-none transition focus:border-green-500 focus:ring-4 focus:ring-green-200/70"
+                >
+                  <option value="" disabled hidden>
+                    Mời quý khách chọn nhu cầu sản phẩm
+                  </option>
+                  <option value="Căn hộ 2 phòng ngủ">Căn hộ 2 phòng ngủ</option>
+                  <option value="Căn hộ 3 phòng ngủ">Căn hộ 3 phòng ngủ</option>
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-6 flex items-center text-green-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.585l3.71-3.354a.75.75 0 111.02 1.1l-4.25 3.845a.75.75 0 01-1.02 0l-4.25-3.845a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <input name="projectName" type="hidden" value="Conic Boulevard" />
+
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#8ae695] via-[#37c36c] to-[#1d8843] px-6 py-3 text-base font-semibold uppercase tracking-wide text-white shadow-[0_18px_35px_rgba(33,136,67,0.35)] transition hover:scale-[1.01] hover:shadow-[0_22px_40px_rgba(33,136,67,0.45)] focus:outline-none focus:ring-4 focus:ring-emerald-200"
+              >
+                <FaPaperPlane className="text-lg" />
+                Đăng ký ngay
+              </button>
+            </form>
+
+            <p className="mt-6 text-center text-xs text-green-700 sm:text-sm">
+              Bằng việc gửi form, bạn đồng ý với{' '}
+              <Link to="/privacy-policy" className="font-medium underline hover:text-green-900">
+                Chính sách bảo mật
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </section>
