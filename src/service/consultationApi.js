@@ -1,4 +1,4 @@
-const API_URL = "https://103.90.224.27:8080/api";
+const API_URL = "https://api.conicboulevard.pro.vn/api";
 
 import axios from "axios";
 
