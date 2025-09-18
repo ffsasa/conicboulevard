@@ -18,7 +18,6 @@ const Navbar = () => {
     { id: "giaban", label: "GIÁ BÁN", type: "section" },
     { id: "pttt", label: "PTTT", type: "section" },
     { id: "lienhe", label: "LIÊN HỆ", type: "section" },
-    { id: "privacy-policy", label: "CHÍNH SÁCH BẢO MẬT", type: "route", path: "/privacy-policy" },
   ]), []);
 
   const sectionItems = useMemo(

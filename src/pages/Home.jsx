@@ -138,7 +138,7 @@ const Home = () => {
                 thuận tiện trong khu vực và liên tỉnh.
               </p>
               <p className="pb-2 text-sm sm:text-2xl">
-                Đón đầu quy hoạch Bình Chánh – đầu mối quan trọng kết nối TP.HCM với các tỉnh ĐBSCL
+                Đón đầu quy hoạch Bình Chánh - đầu mối quan trọng kết nối TP.HCM với các tỉnh ĐBSCL
               </p>
               <ul className="ml-2 list-disc pl-5 text-sm sm:text-2xl">
                 <li>
