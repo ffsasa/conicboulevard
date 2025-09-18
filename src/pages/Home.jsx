@@ -12,7 +12,7 @@ const Home = () => {
         <section id="thongtin" className="max-w-screen-2xl mx-auto sm:pt-10">
           <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-start">
             {/* Khối bên trái chứa tiêu đề + nội dung */}
-            <div className="w-full md:w-1/3 flex flex-col sm:pt-8">
+            <div className="w-full md:w-2/5 flex flex-col">
               <h2
                 className="text-3xl sm:text-5xl font-bold pb-2 text-lightgreen"
                 style={{
@@ -25,13 +25,17 @@ const Home = () => {
 
               <div className="text-sm sm:text-2xl text-lightgreen pt-2">
                 <p>
-                  <strong>TỔNG DIỆN TÍCH: 5.3 ha</strong> 
+                  <strong>TỔNG DIỆN TÍCH: </strong> 
+                  <strong className="text-xl sm:text-3xl">5.3 </strong>
+                  <strong>ha</strong>
                 </p>
 
                 <div className="pt-2 sm:pt-4">
                   <p>
-                    <strong>QUY MÔ:</strong> Gồm 2 phân khu: 114 căn thấp tầng, 2 khối căn hộ: 952 căn hộ + 24 căn shophouse
+                    <strong>QUY MÔ: 5,3 ha</strong> chia làm 2 phân khu:
                   </p>
+                  <p>- 114 căn nhà phố</p>
+                  <p>- 2 khối căn hộ: 952 căn hộ + 24 shophouse</p>
                 </div>
 
                 <div className="pt-2 sm:pt-4">
@@ -55,14 +59,14 @@ const Home = () => {
                   <p><strong>TIẾN ĐỘ DỰ ÁN:</strong></p>
                   <p><strong>- Bàn giao nhà: Block B</strong> - 02/04/2025</p>
                   <p className="pl-44"><strong>Block A – Quý </strong>04/2025</p>
-                  <p><strong>- Làm sổ hồng: </strong>02/06/2025</p>
+                  <p><strong>- Sổ hồng: </strong>02/06/2025</p>
                   <p><strong>VỊ TRÍ:</strong> Đ. Huỳnh Bá Chánh, Tân Kiên, H. Bình Chánh, TP. HCM</p>
                 </div>
               </div>
             </div>
 
             {/* Hình ảnh bên phải */}
-            <div className="w-full md:w-2/3 h-full self-stretch">
+            <div className="w-full md:w-3/5 flex flex-col h-full self-stretch">
               <FullscreenImage
                 src="/thongtin.jpg"
                 alt="Thông tin dự án"
@@ -101,23 +105,14 @@ const Home = () => {
             {/* Văn bản bên phải canh giữa theo chiều cao */}
             <div className="w-full md:w-[40%] sm:pl-16">
               <h2 className="text-3xl sm:text-6xl font-bold text-darkgreen font-dancing">
-                Vị Trí Đắc Địa
+                Vị Trí
               </h2>
-              <h1 className="text-2xl sm:text-5xl text-darkgreen font-dancing">
-                Đủ gần
-              </h1>
-              <p className="text-sm sm:text-3xl space-y-2">
-                • Năm ngay nút giao Võ Văn Kiệt với Quốc Lộ 1A<br />
-                • Kết nối Quận 5, 6, 1 qua Đại Lộ Võ Văn Kiệt.<br />
-                • Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A.<br />
-                • Kết nối với 7 Quận, Huyện qua tuyến kênh Tham Lương – Bến Cát – Rạch Nước Lên.<br />
-              </p>
-              <h1 className="text-2xl sm:text-5xl text-darkgreen font-dancing sm:mt-4">
-                Đủ xa
-              </h1>
-              <p className="text-sm sm:text-3xl">
-                • Nằm biệt lập trong khu dân cư 584 đường Huỳnh Bá Chánh, xã Tân Kiên, Huyện Bình Chánh.
-              </p>
+              <ul className="text-sm sm:text-3xl space-y-5 list-disc pl-9">
+                <li>Tọa lạc ngay nút giao Võ Văn Kiệt với Quốc Lộ 1A.</li>
+                <li>Kết nối Quận 5, 6, 1 qua Đại Lộ Võ Văn Kiệt.</li>
+                <li>Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A.</li>
+                <li>Kết nối với 7 Quận, Huyện qua tuyến kênh Tham Lương – Bến Cát – Rạch Nước Lên (32 km).</li>
+              </ul>
             </div>
           </div>
 
@@ -128,24 +123,15 @@ const Home = () => {
                 Vị trí chiến lược, <br className="hidden md:inline" />
                 đón đầu tương lai
               </h3>
-              <p className="pb-2 text-sm sm:text-2xl">
-                Conic Boulevard Tọa lạc kiêu hãnh tại khu Tây 
-                Nam TP.HCM, đón đầu sự phát triển của khu vực 
-                thông qua hàng loạt dự án hạ tầng giao thông 
-                nghìn tỷ. Đây không chỉ là nơi kết nối các tuyến 
-                giao thông trọng điểm mà còn là đầu mối thông 
-                thương liên vùng, đảm bảo khả năng di chuyển 
-                thuận tiện trong khu vực và liên tỉnh.
-              </p>
-              <p className="pb-2 text-sm sm:text-2xl">
-                Đón đầu quy hoạch Bình Chánh - đầu mối quan trọng kết nối TP.HCM với các tỉnh ĐBSCL
-              </p>
-              <ul className="ml-2 list-disc pl-5 text-sm sm:text-2xl">
-                <li>
-                  Đón đầu các dự án hạ tầng giao thông trọng điểm: Metro 3A (Bến Thành – Tân Kiên), tuyến đường sắt cao tốc TP.HCM -Cần Thơ
+              <ul className="list-none text-sm sm:text-2xl text-darkgreen sm:space-y-5">
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  Đón đầu quy hoạch Bình Chánh - đầu mối quan trọng kết nối TP. HCM với các tỉnh ĐBSCL
                 </li>
-                <li>
-                  Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương –Rạch Nước Lên
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  Đón đầu các dự án hạ tầng giao thông trọng điểm: Metro 3A (Bến Thành – Tân Kiên), tuyến đường sắt cao tốc TP.HCM - Cần Thơ
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  Đón đầu tuyến thủy lộ xuyên tâm dài gần 32km đi qua 7 quận/huyện của TP.HCM đang được đầu tư hơn 9.000 tỷ đồng - kênh Bến Cát - Tham Lương – Rạch Nước Lên
                 </li>
               </ul>
             </div>
@@ -164,7 +150,7 @@ const Home = () => {
 
           <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
             <FullscreenVideo
-              videoUrl="https://www.youtube.com/embed/7fXVvcROavY?enablejsapi=1"
+              videoUrl="https://www.youtube.com/embed/OHxAjoKIL6I?enablejsapi=1"
               className="w-full max-w-5xl aspect-video"
             />
           </div>
@@ -186,42 +172,62 @@ const Home = () => {
           <div className="w-full flex justify-center">
             <div className="pt-3 md:pt-8 w-full max-w-5xl aspect-video">
               <FullscreenVideo
-                videoUrl="https://www.youtube.com/embed/413yjNZiDt0?enablejsapi=1"
+                videoUrl="https://www.youtube.com/embed/RWv_a_XXLOQ?enablejsapi=1"
                 className="w-full max-w-5xl aspect-video"
               />
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-center md:pt-7">
-            <div className="w-full md:w-[55%]">
+            <div className="w-full md:w-[65%]">
               <FullscreenImage
                 src="/tienichdichuyen.jpg"
                 alt="Di chuyển đến tiện ích"
                 className="shadow-lg w-full object-cover"
               />
             </div>
-            <div className="w-full md:w-[45%]">
+            <div className="w-full md:w-[35%]">
               <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing pb-3 ">
                 Thời gian di chuyển đến các tiện ích trong khu vực.
               </h2>
-              <ul className="ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-2xl">
-                <li className="hover:text-darkgreen transition duration-200">5 phút: đến bến xe miền tây mới</li>
-                <li className="hover:text-darkgreen transition duration-200">7 phút: chợ Bình Chánh</li>
-                <li className="hover:text-darkgreen transition duration-200">8 phút: trường THPT Bình Tân</li>
-                <li className="hover:text-darkgreen transition duration-200">10 phút: Aeon mall Tên Lửa</li>
-                <li className="hover:text-darkgreen transition duration-200">15 phút: UBND Bình Chánh</li>
-                <li className="hover:text-darkgreen transition duration-200">20 phút: làng đại học Q.7</li>
-                <li className="hover:text-darkgreen transition duration-200">25 phút: bệnh viện Nhi Đồng 2</li>
-                <li className="hover:text-darkgreen transition duration-200">25 phút: trung tâm quận 1, quận 7</li>
-                <li className="hover:text-darkgreen transition duration-200">30 phút: trường quốc tế RMIT</li>
-                <li className="hover:text-darkgreen transition duration-200">35 phút: sân bay Tân Sơn Nhất</li>
+              <ul className="list-none ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-2xl">
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  5 phút: đến bến xe miền tây
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  7 phút: chợ Bình Chánh
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  8 phút: trường THPT Bình Tân
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  10 phút: Aeon mall Tên Lửa
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  15 phút: UBND Bình Chánh
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  20 phút: làng đại học Q.7
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  25 phút: bệnh viện Nhi Đồng 2
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  25 phút: trung tâm quận 1, quận 7
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  30 phút: trường quốc tế RMIT
+                </li>
+                <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
+                  35 phút: Sân Bay
+                </li>
               </ul>
             </div>
           </div>
         </section>
 
         <section id="matbang" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
-          <h2 className="text-md sm:text-4xl font-bold text-darkgreen text-center sm:pt-4 sm:mb-2">
+          <h2 className="text-md sm:text-4xl font-bold font-dancing text-darkgreen text-center sm:pt-4 sm:mb-2">
             Mặt Bằng Tầng Block A
           </h2>
           <div className="w-full">
