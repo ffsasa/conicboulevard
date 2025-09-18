@@ -14,7 +14,7 @@ const Hero = () => {
             CONIC BOULEVARD
           </h1>
           <p className="text-sm sm:text-base md:text-[1.3rem] italic font-semibold text-brightgreen pb-4 sm:pb-6">
-            "ĐỦ GẦN ĐỂ TẬN HƯỞNG - ĐỦ XA ĐỂ RIÊNG TƯ"
+            "NHẬN KÝ GỬI - MUA BÁN - CHO THUÊ"
           </p>
           <a
             href="#dangky2"

@@ -48,7 +48,7 @@ const PrivacyPolicy = () => {
         <div className="rounded-lg bg-green-50 border border-green-200 px-4 py-3 text-base sm:text-lg">
           <p>
             Liên hệ qua số <a className="text-green-700 font-semibold hover:underline" href="tel:0941841024">0941 841 024</a>
-            {' '}hoặc email <a className="text-green-700 font-semibold hover:underline" href="mailto:lienhe@conicboulevard.pro.vn">lienhe@conicboulevard.pro.vn</a>
+            {' '}hoặc email <a className="text-green-700 font-semibold hover:underline" href="mailto:cuongcoach.vn2025@gmail.com">cuongcoach.vn2025@gmail.com</a>
             {' '}để được hỗ trợ chỉnh sửa hoặc xóa dữ liệu.
           </p>
         </div>

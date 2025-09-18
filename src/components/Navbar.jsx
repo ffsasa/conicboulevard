@@ -27,13 +27,20 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 10 || location.pathname !== "/");
     };
+
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   useEffect(() => {
+    if (location.pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+    
     const visibleSections = new Map();
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,6 +56,8 @@ const Navbar = () => {
 
         if (visible.length > 0) {
           setActiveSection(visible[0].id);
+        } else {
+        setActiveSection("");
         }
       },
       {
@@ -67,8 +76,9 @@ const Navbar = () => {
         const section = document.getElementById(item.id);
         if (section) observer.unobserve(section);
       });
+      observer.disconnect();
     };
-  }, [sectionItems]);
+  }, [location.pathname, sectionItems, menuItems]);
 
   return (
     <nav className={`fixed w-full top-0 z-50 transition-colors duration-300 ${isScrolled ? "bg-lightgrey-150" : "bg-transparent"}`}>
