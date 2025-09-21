@@ -14,9 +14,8 @@ const Navbar = () => {
     { id: "vitri", label: "VỊ TRÍ", type: "section" },
     { id: "tienich", label: "TIỆN ÍCH", type: "section" },
     { id: "matbang", label: "MẶT BẰNG", type: "section" },
-    { id: "tiendo", label: "TIẾN ĐỘ", type: "section" },
+    { id: "hinhanh", label: "HÌNH ẢNH", type: "section" },
     { id: "giaban", label: "GIÁ BÁN", type: "section" },
-    { id: "pttt", label: "PTTT", type: "section" },
     { id: "lienhe", label: "LIÊN HỆ", type: "section" },
   ]), []);
 

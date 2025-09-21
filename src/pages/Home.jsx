@@ -247,8 +247,11 @@ const Home = () => {
               className="shadow-lg w-full object-cover"
             />
           </div>
+        </section>
+
+        <section id="hinhanh" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
           {/* <FloorSlider /> */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen pb-4 sm:pt-6 font-dancing">Thiết kế căn hộ hiện đại với diện tích lớn - sang trọng</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen pb-4 sm:pt-6 font-dancing">Hình ảnh thực tế căn hộ</h2>
           <p className="md:pb-1 text-sm sm:text-2xl">
             Conic Boulevard thiết lập tiêu chuẩn sống đẳng cấp với những căn hộ diện tích lớn từ 84,32m2 đến 114m2,
             đáp ứng nhu cầu ngày càng cao về không gian sống rộng, thoáng giữa trung tâm thành phố.
