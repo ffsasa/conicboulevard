@@ -21,13 +21,15 @@ const ImageCarousel = ({ images, className = "" }) => {
         className={`w-full rounded-xl shadow-lg ${className}`}
       >
         {images.map((image, index) => (
-          <SwiperSlide key={image.src ?? index}>
-            <img
-              src={image.src}
-              alt={image.alt ?? `Slide image ${index + 1}`}
-              className="w-full h-auto object-cover cursor-zoom-in"
-              onClick={() => setActiveImage(image)}
-            />
+          <SwiperSlide key={image.src ?? index} className="flex">
+            <div className="relative w-full overflow-hidden aspect-[4/3] sm:aspect-[16/9]">
+              <img
+                src={image.src}
+                alt={image.alt ?? `Slide image ${index + 1}`}
+                className="absolute inset-0 w-full h-full object-cover cursor-zoom-in"
+                onClick={() => setActiveImage(image)}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
