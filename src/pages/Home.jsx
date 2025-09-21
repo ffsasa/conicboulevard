@@ -228,7 +228,7 @@ const Home = () => {
 
         <section id="matbang" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
           <h2 className="text-md sm:text-4xl font-bold font-dancing text-darkgreen text-center sm:pt-4 sm:mb-2">
-            Mặt Bằng Tầng Block A
+            Mặt Bằng Tầng Điển Hình - Block A
           </h2>
           <div className="w-full">
             <FullscreenImage
@@ -237,8 +237,8 @@ const Home = () => {
               className="shadow-lg w-full object-cover"
             />
           </div>
-          <h2 className="text-md sm:text-4xl font-bold text-darkgreen text-center sm:pt-4 sm:mb-2">
-            Mặt Bằng Tầng Block B
+          <h2 className="text-md sm:text-4xl font-bold font-dancing text-darkgreen text-center sm:pt-4 sm:mb-2">
+            Mặt Bằng Tầng Điển Hình -  Block B
           </h2>
           <div className="w-full">
             <FullscreenImage
@@ -322,109 +322,17 @@ const Home = () => {
           <RegisterForm />
         </section>
 
-        <section id="dacdiem" className="bg-white bg-opacity-70 px-4 py-3 sm:py-6">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-center text-base sm:text-lg md:text-2xl font-semibold text-green-800 mb-2 md:mb-6 leading-relaxed">
-              Đặc điểm nổi bật trong thiết kế căn hộ tại Conic Boulevard so với chung cư khác tại khu vực như:
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm sm:text-base md:text-lg text-white font-medium">
-              <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
-                Thiết kế 2 ban công, đối lưu không khí
-              </div>
-              <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
-                Diện tích lớn, căn nhỏ nhất 84,6m²
-              </div>
-              <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
-                Thiết kế căn 3PN linh động cho việc sử dụng
-              </div>
-              <div className="bg-green-500 rounded-xl py-3 px-6 text-center">
-                Tất cả các căn đều có ban công
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col items-center">
-
-              <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
-                <FullscreenVideo
-                  videoUrl="https://www.youtube.com/embed/OFJ5rR0HC4I?enablejsapi=1"
-                  className="w-full h-full rounded-xl shadow-lg"
-                />
-              </div>
-              <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
-                Video căn hộ 2 phòng ngủ diện tích 84,32 m²
-              </p>
-
-
-              <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
-                <FullscreenVideo
-                  videoUrl="https://www.youtube.com/embed/SFeTqRhQqtI?enablejsapi=1"
-                  className="w-full h-full rounded-xl shadow-lg"
-                />
-              </div>
-              <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
-                Video căn hộ 2 phòng ngủ diện tích 85 m²
-              </p>
-
-
-              <div className="pt-4 md:pt-8 max-w-5xl w-full aspect-video">
-                <FullscreenVideo
-                  videoUrl="https://www.youtube.com/embed/kGw5bJ0FRCM?enablejsapi=1"
-                  className="w-full h-full rounded-xl shadow-lg"
-                />
-              </div>
-              <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
-                Video căn hộ 3 phòng ngủ diện tích 114m²
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="tiendo" className="max-w-screen-2xl mx-auto sm:pt-6">
-          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing md:pb-3">Tiến Độ</h2>
-          <p className="text-sm sm:text-2xl sm:pb-2">
-            CĂN HỘ <strong>CONIC BOULEVARD</strong> ĐÃ HOÀN THIỆN - SẴN SÀNG BÀN GIAO TỪ <strong>THÁNG 4/2025</strong>. <br />
-          </p>
-
-          <h3 className="text-sm sm:text-2xl font-semibold text-darkgreen mb-2">
-            VIDEO THỰC TẾ CĂN HỘ CONIC BOULEVARD
-          </h3>
-
-          <div className="w-full flex justify-center">
-            <div className="sm:pt-2 max-w-5xl w-full aspect-video">
-              <FullscreenVideo
-                  videoUrl="https://www.youtube.com/embed/uALGT60zg40?enablejsapi=1"
-                  className="w-full h-full rounded-xl shadow-lg"
-                />
-            </div>
-          </div>
-
-          <div className="w-[100%] w-full py-5">
-            <FullscreenImage
-              src="/thucte.jpg"
-              alt="Thực tế Conic Boulevard"
-              className="shadow-lg w-full object-cover"
-            />
-          </div>
-          <div className="w-[100%] w-full">
-            <FullscreenImage
-              src="/bangiao.jpg"
-              alt="Bàn giao Conic Boulevard"
-              className="shadow-lg w-full object-cover"
-            />
-          </div>
-        </section>
-
         <section id="giaban" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
-          <h2 className="text-center text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">Giá Bán</h2>
-          <h2 className="text-2xl md:text-4xl text-center text-luxurybronze font-allura sm:pt-3">
-            Cơ hội vàng sở hữu căn hộ Conic Boulevard với mức giá bất ngờ
-          </h2>
+          <h2 className="text-center text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">GIÁ BÁN CĂN HỘ CONIC BOULEVARD</h2>
 
           <div className="sm:mt-5 grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-10 justify-items-center">
             {/* Card 2 phòng ngủ */}
-            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img src="/giaban-2pn.jpg" alt="Căn hộ 2 phòng ngủ" className="w-full h-auto" />
+            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img
+                src="/giaban-2pn.jpg"
+                alt="Căn hộ 2 phòng ngủ"
+                className="w-full h-56 sm:h-64 object-cover"
+              />
               <div className="bg-[#a8844e] p-5 text-white">
                 <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
                   Căn hộ 2 phòng ngủ
@@ -440,8 +348,12 @@ const Home = () => {
             </div>
 
             {/* Card 2 phòng ngủ */}
-            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img src="/giaban-2pn2.jpg" alt="Căn hộ 2 phòng ngủ" className="w-full h-auto" />
+            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img
+                src="/giaban-2pn2.jpg"
+                alt="Căn hộ 2 phòng ngủ"
+                className="w-full h-56 sm:h-64 object-cover"
+              />
               <div className="bg-[#a8844e] p-5 text-white">
                 <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
                   Căn hộ 2 phòng ngủ
@@ -457,8 +369,12 @@ const Home = () => {
             </div>
 
             {/* Card 2 phòng ngủ */}
-            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img src="/giaban-2pn3.jpg" alt="Căn hộ 2 phòng ngủ" className="w-full h-auto" />
+            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img
+                src="/giaban-2pn3.jpg"
+                alt="Căn hộ 2 phòng ngủ"
+                className="w-full h-56 sm:h-64 object-cover"
+              />
               <div className="bg-[#a8844e] p-5 text-white">
                 <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
                   Căn hộ 2 phòng ngủ
@@ -474,8 +390,12 @@ const Home = () => {
             </div>
 
             {/* Card 3 phòng ngủ */}
-            <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img src="/giaban-3pn.jpg" alt="Căn hộ 3 phòng ngủ" className="w-full h-auto" />
+            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
+              <img
+                src="/giaban-3pn.jpg"
+                alt="Căn hộ 3 phòng ngủ"
+                className="w-full h-56 sm:h-64 object-cover"
+              />
               <div className="bg-[#a8844e] p-5 text-white">
                 <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
                   Căn hộ 3 phòng ngủ
@@ -491,69 +411,35 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="pt-4">
-            <p className="text-sm sm:text-2xl sm:pb-2">
-              Giá bán đấn nền dự án Conic Boulevard 5m x 20m = 100m²: 
-            </p>
-            <ul className="list-none ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-2xl">
-              <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
-                5 tỷ ( Mặt tiền đường số 1 lộ giới 16m)
-              </li>
-              <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
-                7 tỷ ( Mặt tiền đường nội khu – đói diện công viên) 
-              </li>
-            </ul>
-          </div>
-          
-          
-          <h2 className="text-3xl md:text-4xl text-center text-luxurybronze font-allura pt-6 md:pt-10">
-            Đột phá với mức giá rẻ nhất thị trường khu Tây
-          </h2>
-
-          <div className="w-[100%] w-full py-2 md:py-5">
-            <FullscreenImage
-              src="/bando.jpg"
-              alt="Vị trí Conic Boulevard"
-              className="shadow-lg w-full object-cover"
-            />
+          <div className="pt-8">
+            <div className="bg-gradient-to-r from-[#fdf3e7] to-[#f6e0bd] border border-[#d6b071] rounded-3xl p-6 sm:p-10 shadow-xl">
+              <h3 className="text-lg sm:text-3xl font-semibold text-[#603813] text-center uppercase tracking-widest">
+                Giá bán đất nền Conic Boulevard
+              </h3>
+              <p className="mt-4 text-sm sm:text-xl text-gray-700 text-center">
+                Lô tiêu chuẩn <span className="font-semibold text-darkgreen">5m × 20m (100m²)</span> với hai vị trí vàng phù hợp nhu cầu đầu tư và an cư.
+              </p>
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3 bg-white/80 backdrop-blur rounded-2xl p-4 shadow-md">
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-darkgreen text-white text-lg font-semibold">1</span>
+                  <div className="text-sm sm:text-lg text-[#603813]">
+                    <p className="font-semibold">5 tỷ</p>
+                    <p className="text-gray-600">Mặt tiền đường số 1 lộ giới 16m</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 bg-white/80 backdrop-blur rounded-2xl p-4 shadow-md">
+                  <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-darkgreen text-white text-lg font-semibold">2</span>
+                  <div className="text-sm sm:text-lg text-[#603813]">
+                    <p className="font-semibold">7 tỷ</p>
+                    <p className="text-gray-600">Mặt tiền đường nội khu – đối diện công viên</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section id="pttt" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
-          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing text-center">
-            Phương Thức Thanh Toán Mới Nhất Tháng 8/2025
-          </h2>
-
-          <div className="w-[100%] w-full py-2 md:py-5">
-            <FullscreenImage
-              src="/pttt.jpg"
-              alt="PTTT Conic Boulevard"
-              className="shadow-lg w-full object-cover"
-            />
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-bold pt-4 sm:pt-8 text-darkgreen font-dancing text-center">
-            Phương Thức Thanh Toán Vay Ngân Hàng
-          </h2>
-
-          <div className="w-[100%] w-full py-2 md:py-5">
-            <FullscreenImage
-              src="/ptvay.jpg"
-              alt="PTTT Conic Boulevard"
-              className="shadow-lg w-full object-cover"
-            />
-          </div>
-
-          <div className="flex justify-center pb-5 md:pt-10">
-            <img
-              src="/uudai.jpg"
-              alt="Ưu đãi Conic Boulevard"
-              className="shadow-lg w-full h-auto"
-            />
-          </div>
-
-          <EndingRegisterForm />
-        </section>
+        <EndingRegisterForm />
         {/* Nút Zalo */}
         <a
           href="https://zalo.me/0941841024"

@@ -45,24 +45,35 @@ const Navbar = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          visibleSections.set(entry.target.id, entry.isIntersecting);
+          const { id } = entry.target;
+          if (entry.isIntersecting) {
+            visibleSections.set(id, {
+              id,
+              ratio: entry.intersectionRatio,
+              top: entry.boundingClientRect.top,
+            });
+          } else {
+            visibleSections.delete(id);
+          }
         });
 
-        const visible = [...visibleSections.entries()]
-          .filter(([, isVisible]) => isVisible)
-          .map(([id]) => document.getElementById(id))
-          .filter(Boolean)
-          .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+        const visible = [...visibleSections.values()].sort((a, b) => {
+          if (b.ratio !== a.ratio) {
+            return b.ratio - a.ratio;
+          }
+          return a.top - b.top;
+        });
 
         if (visible.length > 0) {
-          setActiveSection(visible[0].id);
+          const nextActive = visible[0].id;
+          setActiveSection((current) => (current === nextActive ? current : nextActive));
         } else {
-        setActiveSection("");
+          setActiveSection("");
         }
       },
       {
         root: null,
-        threshold: 0.1,
+        threshold: Array.from({ length: 101 }, (_, index) => index / 100),
       }
     );
 
