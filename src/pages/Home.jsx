@@ -4,8 +4,39 @@ import EndingRegisterForm from "../components/EndingRegisterForm";
 import FloorSlider from "../components/FloorSlider";
 import FullscreenImage from "../components/FullscreenImage";
 import FullscreenVideo from "../components/FullscreenVideo";
+import ImageCarousel from "../components/ImageCarousel";
 
 const Home = () => {
+
+  const createSlides = (folder, count, altBase) =>
+  Array.from({ length: count }, (_, index) => ({
+    src: `/${folder}/${index + 1}.jpg`,
+    alt: `${altBase} - Hình ${index + 1}`,
+  }));
+
+  const gallerySections = [
+    {
+      images: createSlides("maub", 13, "Mẫu căn hộ B"),
+      videoUrl: "https://www.youtube.com/embed/p_3ldfGiZH8?enablejsapi=1",
+      caption: "Video thực tế căn hộ góc 2 phòng ngủ 84m² - Conic Boulevard",
+    },
+    {
+      images: createSlides("mauc", 6, "Mẫu căn hộ C1/C2"),
+      videoUrl: "https://www.youtube.com/embed/RvNsxklD32w?enablejsapi=1",
+      caption: "Video thực tế căn hộ góc 2 phòng ngủ 85m² - Conic Boulevard",
+    },
+    {
+      images: createSlides("maud", 13, "Mẫu căn hộ D"),
+      videoUrl: "https://www.youtube.com/embed/ME0pLer1Kx0?enablejsapi=1",
+      caption: "Video thực tế căn hộ góc 2 phòng ngủ 89m² - Conic Boulevard",
+    },
+    {
+      images: createSlides("maua", 15, "Mẫu căn hộ A"),
+      videoUrl: "https://www.youtube.com/embed/pMdQXzUlJRI?enablejsapi=1",
+      caption: "Video thực tế căn hộ góc 3 phòng ngủ 114m² - Conic Boulevard",
+    },
+  ];
+
   return (
     <>
       <div className="w-full px-2 sm:px-6 lg:px-10">
@@ -258,79 +289,22 @@ const Home = () => {
             Trong bối cảnh “đất chật, người đông”, Conic Boulevard trở thành lựa chọn hiếm hoi mang
             lại sự thoải mái và tiện nghi cho gia đình nhiều thế hệ.
           </p>
-          <div>
-            <div className="w-full">
-            <FullscreenImage
-              src="/mauab.jpg"
-              alt="Mẫu căn hộ B"
-              className="shadow-lg w-full object-cover"
-            />
-            </div>
-            <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
-              <FullscreenVideo
-                videoUrl="https://www.youtube.com/embed/p_3ldfGiZH8?enablejsapi=1"
-                className="w-full max-w-5xl aspect-video"
-              />
-            </div>
-            <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
-                  Video thực tế căn hộ góc 2 phòng ngủ 84m² - Conic Boulevard
-            </p>
-          </div>
           
-          <div>
-            <div className="w-full">
-              <FullscreenImage
-                src="/maucd.jpg"
-                alt="Mẫu căn hộ C1/C2"
-                className="shadow-lg w-full object-cover"
-              />
-            </div>
-            <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
-              <FullscreenVideo
-                videoUrl="https://www.youtube.com/embed/RvNsxklD32w?enablejsapi=1"
-                className="w-full max-w-5xl aspect-video"
-              />
-            </div>
-            <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
-                  Video thực tế căn hộ góc 2 phòng ngủ 85m² - Conic Boulevard
-            </p>
-          </div>
-          
-          <div>
-            <div className="w-full">
-              <FullscreenImage
-                src="/maud.jpg"
-                alt="Mẫu căn hộ D"
-                className="shadow-lg w-full object-cover"
-              />
-            </div>
-            <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
-              <FullscreenVideo
-                videoUrl="https://www.youtube.com/embed/ME0pLer1Kx0?enablejsapi=1"
-                className="w-full max-w-5xl aspect-video"
-              />
-            </div>
-            <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
-                  Video thực tế căn hộ góc 2 phòng ngủ 89m² - Conic Boulevard
-            </p>
-          </div>
-          <div>
-            <div className="w-full">
-              <FullscreenImage
-                src="/maua.jpg"
-                alt="Mẫu căn hộ A"
-                className="shadow-lg w-full object-cover"
-              />
-            </div>
-            <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
-              <FullscreenVideo
-                videoUrl="https://www.youtube.com/embed/pMdQXzUlJRI?enablejsapi=1"
-                className="w-full max-w-5xl aspect-video"
-              />
-            </div>
-            <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
-                  Video thực tế căn hộ góc 3 phòng ngủ 114m² - Conic Boulevard
-            </p>
+          <div className="space-y-10 sm:space-y-16">
+            {gallerySections.map((section, index) => (
+              <div key={section.videoUrl ?? index}>
+                <ImageCarousel images={section.images} />
+                <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
+                  <FullscreenVideo
+                    videoUrl={section.videoUrl}
+                    className="w-full max-w-5xl aspect-video"
+                  />
+                </div>
+                <p className="text-sm sm:text-base italic text-gray-700 mt-2 sm:mt-4 text-center">
+                  {section.caption}
+                </p>
+              </div>
+            ))}
           </div>
           
           <RegisterForm />
