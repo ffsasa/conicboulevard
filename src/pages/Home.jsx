@@ -1,11 +1,12 @@
 // src/pages/Home.jsx
 import RegisterForm from "../components/RegisterForm";
 import EndingRegisterForm from "../components/EndingRegisterForm";
-import FloorSlider from "../components/FloorSlider";
 import FullscreenImage from "../components/FullscreenImage";
 import FullscreenVideo from "../components/FullscreenVideo";
 import ImageCarousel from "../components/ImageCarousel";
 import SectionWrapper from "../components/SectionWrapper";
+import { FaBed, FaCrown } from "react-icons/fa";
+import { GiFamilyHouse } from "react-icons/gi";
 
 const Home = () => {
 
@@ -39,6 +40,61 @@ const Home = () => {
       videoUrl: "https://www.youtube.com/embed/pMdQXzUlJRI?enablejsapi=1",
       caption: "Video thực tế căn hộ góc 3 phòng ngủ 114m² - Conic Boulevard",
       title: "HÌNH ẢNH THỰC TẾ CĂN HỘ GÓC 3 PHÒNG NGỦ 114m² – CONIC BOULEVARD",
+    },
+  ];
+
+  const priceCards = [
+    {
+      id: "two-bed-84",
+      title: "Căn hộ 2 phòng ngủ",
+      subtitle: "Layout tiêu chuẩn",
+      image: "/giaban-2pn.jpg",
+      area: "84 m²",
+      highlight: "Ban công thông thoáng, tối ưu ánh sáng tự nhiên.",
+      prices: [
+        { label: "Giao nhà thô", value: "2,2 tỷ VNĐ" },
+        { label: "Giao nhà hoàn thiện", value: "2,75 tỷ VNĐ" },
+      ],
+      icon: FaBed,
+    },
+    {
+      id: "two-bed-85",
+      title: "Căn hộ 2 phòng ngủ",
+      subtitle: "View công viên nội khu",
+      image: "/giaban-2pn2.jpg",
+      area: "85 m²",
+      highlight: "Không gian mở liền mạch phòng khách - bếp.",
+      prices: [
+        { label: "Giao nhà thô", value: "2,1 tỷ VNĐ" },
+        { label: "Giao nhà hoàn thiện", value: "2,55 tỷ VNĐ" },
+      ],
+      icon: FaBed,
+    },
+    {
+      id: "two-bed-89",
+      title: "Căn hộ 2 phòng ngủ",
+      subtitle: "Căn góc hai mặt thoáng",
+      image: "/giaban-2pn3.jpg",
+      area: "89 m²",
+      highlight: "Hai logia riêng, đón gió tự nhiên mọi thời điểm.",
+      prices: [
+        { label: "Giao nhà thô", value: "2,8 tỷ VNĐ" },
+        { label: "Giao nhà hoàn thiện", value: "3,15 tỷ VNĐ" },
+      ],
+      icon: FaBed,
+    },
+    {
+      id: "three-bed-114",
+      title: "Căn hộ 3 phòng ngủ",
+      subtitle: "Không gian sống đẳng cấp",
+      image: "/giaban-3pn.jpg",
+      area: "114 m²",
+      highlight: "Phòng master rộng, khu vực sinh hoạt riêng tư.",
+      prices: [
+        { label: "Giao nhà thô", value: "3,3 tỷ VNĐ" },
+        { label: "Giao nhà hoàn thiện", value: "3,8 tỷ VNĐ" },
+      ],
+      icon: GiFamilyHouse,
     },
   ];
 
@@ -309,90 +365,71 @@ const Home = () => {
 
         <SectionWrapper id="giaban" innerClassName="max-w-screen-2xl mx-auto">
           <h2 className="text-center text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">GIÁ BÁN CĂN HỘ CONIC BOULEVARD</h2>
+          <div className="sm:mt-5 rounded-[2.5rem] bg-[radial-gradient(circle_at_top,_#ffffff,_#f3f0e6)] p-5 sm:p-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+              {priceCards.map((card) => {
+                const Icon = card.icon;
+                return (
+                  <article
+                    key={card.id}
+                    className="group relative flex w-full flex-col rounded-3xl border border-luxurybronze/40 bg-gradient-to-br from-white via-white to-emerald-50/70 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-luxurybronze/70 hover:shadow-2xl"
+                  >
+                    <div className="relative overflow-hidden rounded-2xl">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="h-48 w-full rounded-2xl object-cover sm:h-56"
+                      />
+                    </div>
+                    <div className="mt-5 flex flex-1 flex-col gap-5">
+                      <header className="flex items-start gap-3">
+                        <span className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-darkgreen shadow-inner">
+                          <Icon className="text-2xl" />
+                        </span>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">
+                            {card.subtitle}
+                          </p>
+                          <h3 className="text-lg font-semibold text-darkgreen sm:text-xl">
+                            {card.title}
+                          </h3>
+                        </div>
+                      </header>
 
-          <div className="sm:mt-5 grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-10 justify-items-center">
-            {/* Card 2 phòng ngủ */}
-            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img
-                src="/giaban-2pn.jpg"
-                alt="Căn hộ 2 phòng ngủ"
-                className="w-full h-56 sm:h-64 object-cover"
-              />
-              <div className="bg-[#a8844e] p-5 text-white">
-                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
-                  Căn hộ 2 phòng ngủ
-                </div>
-                <div className="pt-4 text-sm font-semibold">
-                  Diện tích: <span className="text-white font-normal">84 m²</span>
-                </div>
-                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  <p className="mb-1">GIÁ BÁN: 2,2 tỷ VNĐ (giao nhà thô)</p>
-                  <p className="mt-0">2,75 tỷ VNĐ (giao nhà hoàn thiện)</p>
-                </div>
-              </div>
-            </div>
+                      <div className="rounded-2xl border border-luxurybronze/30 bg-white/80 p-4 shadow-sm">
+                        <p className="text-xs font-medium uppercase tracking-[0.3em] text-emerald-700">Diện tích</p>
+                        <p className="mt-2 text-xl font-heading text-darkgreen">{card.area}</p>
+                        <p className="mt-2 text-sm text-gray-600">{card.highlight}</p>
+                      </div>
 
-            {/* Card 2 phòng ngủ */}
-            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img
-                src="/giaban-2pn2.jpg"
-                alt="Căn hộ 2 phòng ngủ"
-                className="w-full h-56 sm:h-64 object-cover"
-              />
-              <div className="bg-[#a8844e] p-5 text-white">
-                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
-                  Căn hộ 2 phòng ngủ
-                </div>
-                <div className="pt-4 text-sm font-semibold">
-                  Diện tích: <span className="text-white font-normal">85 m²</span>
-                </div>
-                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  <p className="mb-1">GIÁ BÁN: 2,1 tỷ VNĐ (giao nhà thô)</p>
-                  <p className="mt-0">2,55 tỷ VNĐ (giao nhà hoàn thiện)</p>
-                </div>
-              </div>
-            </div>
+                      <div className="rounded-2xl border border-luxurybronze/40 bg-white/90 p-4 shadow-sm">
+                        {card.prices.map((price, index) => (
+                          <div
+                            key={price.label}
+                            className={`${
+                              index > 0
+                                ? "mt-3 border-t border-dashed border-luxurybronze/30 pt-3"
+                                : ""
+                            } flex items-baseline justify-between gap-3`}
+                          >
+                            <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500">
+                              {price.label}
+                            </span>
+                            <span className="text-2xl font-heading text-darkgreen">
+                              {price.value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
 
-            {/* Card 2 phòng ngủ */}
-            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img
-                src="/giaban-2pn3.jpg"
-                alt="Căn hộ 2 phòng ngủ"
-                className="w-full h-56 sm:h-64 object-cover"
-              />
-              <div className="bg-[#a8844e] p-5 text-white">
-                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
-                  Căn hộ 2 phòng ngủ
-                </div>
-                <div className="pt-4 text-sm font-semibold">
-                  Diện tích: <span className="text-white font-normal">89 m²</span>
-                </div>
-                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  <p className="mb-1">GIÁ BÁN: 2,8 tỷ VNĐ (giao nhà thô)</p>
-                  <p className="mt-0">3,15 tỷ VNĐ (giao nhà hoàn thiện)</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 phòng ngủ */}
-            <div className="w-full max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-xl border border-green-300 transition-transform hover:scale-105 hover:shadow-2xl">
-              <img
-                src="/giaban-3pn.jpg"
-                alt="Căn hộ 3 phòng ngủ"
-                className="w-full h-56 sm:h-64 object-cover"
-              />
-              <div className="bg-[#a8844e] p-5 text-white">
-                <div className="bg-[#603813] text-white px-4 py-2 rounded-t-md font-semibold text-lg text-center">
-                  Căn hộ 3 phòng ngủ
-                </div>
-                <div className="pt-4 text-sm font-semibold">
-                  Diện tích: <span className="text-white font-normal">114 m²</span>
-                </div>
-                <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
-                  <p className="mb-1">GIÁ BÁN: 3,3 tỷ VNĐ (giao nhà thô)</p>
-                  <p className="mt-0">3,8 tỷ VNĐ (giao nhà hoàn thiện)</p>
-                </div>
-              </div>
+                      <span className="inline-flex items-center gap-2 self-start rounded-full bg-gradient-to-r from-emerald-100/80 via-white to-emerald-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-darkgreen shadow">
+                        <FaCrown className="text-base text-luxurybronze" />
+                        Nhận ưu đãi
+                      </span>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
 

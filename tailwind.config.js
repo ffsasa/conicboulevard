@@ -26,6 +26,7 @@ export default {
         dancing: ['"Dancing Script"', 'cursive'],
         vibes: ['Great Vibes', 'cursive'],
         allura: ['Allura', 'cursive'],
+        heading: ['"Playfair Display"', 'serif'],
       },
       keyframes: {
         pulseScale: {
