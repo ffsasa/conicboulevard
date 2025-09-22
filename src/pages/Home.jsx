@@ -128,9 +128,6 @@ const Home = () => {
                 alt="Vị trí Conic Boulevard"
                 className="shadow-lg w-full object-cover rounded-xl"
               />
-              <p className="text-sm sm:text-2xl text-darkgreen font-dancing mt-3 text-center">
-                ĐỦ GẦN PHỒN HOA - ĐỦ XA VỘI VÃ
-              </p>
             </div>
 
             {/* Văn bản bên phải canh giữa theo chiều cao */}
@@ -171,7 +168,7 @@ const Home = () => {
             <div className="w-full md:w-[75%]">
               <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: "75%" }}>
                 <FullscreenImage
-                  src="/map.png"
+                  src="/map.jpg"
                   alt="Vị trí Conic Boulevard"
                   className="absolute inset-0 w-full h-full object-cover shadow-lg"
                 />
