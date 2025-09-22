@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 
-const FullscreenImage = ({ src, alt, className = "" }) => {
+const FullscreenImage = ({ src, alt, className = "", containerClassName = "" }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const touchStartRef = useRef({ x: 0, y: 0, time: 0 });
@@ -69,7 +69,7 @@ const FullscreenImage = ({ src, alt, className = "" }) => {
         onClick={() => setIsFullscreen(true)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="block w-full p-0 border-none bg-transparent"
+        className={`block w-full p-0 border-none bg-transparent ${containerClassName}`}
       >
         <img
           src={src}

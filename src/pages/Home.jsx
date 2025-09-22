@@ -185,7 +185,7 @@ const Home = () => {
         <SectionWrapper id="thongtin" innerClassName="max-w-screen-2xl mx-auto">
           <div className="space-y-12">
             <div className="flex flex-col gap-10 md:flex-row md:items-stretch">
-              <div className="w-full md:w-1/2">
+              <div className="w-full md:w-5/12 lg:w-1/3">
                 <div className="h-full rounded-[2.75rem] border border-luxurybronze/20 bg-white/80 p-6 sm:p-10 shadow-[0_25px_80px_-40px_rgba(1,68,33,0.45)] backdrop-blur">
                   <SectionHeading
                     eyebrow="Conic Boulevard"
@@ -233,9 +233,14 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="w-full md:w-1/2">
+              <div className="w-full md:w-7/12 lg:w-2/3">
                 <div className="relative h-full overflow-hidden rounded-[2.75rem] border border-white/40 shadow-[0_30px_90px_-50px_rgba(96,56,19,0.6)]">
-                  <FullscreenImage src="/thongtin.jpg" alt="Thông tin dự án" className="h-full" />
+                  <FullscreenImage
+                    src="/thongtin.jpg"
+                    alt="Thông tin dự án"
+                    className="h-full"
+                    containerClassName="h-full"
+                  />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-emerald-100/10" />
                 </div>
               </div>
@@ -270,7 +275,12 @@ const Home = () => {
             {/* Văn bản bên phải canh giữa theo chiều cao */}
             <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div className="relative overflow-hidden rounded-[2.75rem] border border-white/40 shadow-[0_30px_90px_-55px_rgba(1,68,33,0.45)]">
-                <FullscreenImage src="/vitri.jpg" alt="Vị trí Conic Boulevard" className="h-full" />
+                <FullscreenImage
+                  src="/vitri.jpg"
+                  alt="Vị trí Conic Boulevard"
+                  className="h-full"
+                  containerClassName="h-full"
+                />
               </div>
 
               {/* Văn bản bên trái */}
@@ -302,7 +312,12 @@ const Home = () => {
               </div>
 
               <div className="relative overflow-hidden rounded-[2.75rem] border border-white/40 shadow-[0_30px_90px_-55px_rgba(96,56,19,0.55)]">
-                <FullscreenImage src="/map.jpg" alt="Bản đồ vị trí Conic Boulevard" className="h-full" />
+                <FullscreenImage
+                  src="/map.jpg"
+                  alt="Bản đồ vị trí Conic Boulevard"
+                  className="h-full"
+                  containerClassName="h-full"
+                />
               </div>
             </div>
 
@@ -335,7 +350,12 @@ const Home = () => {
 
             <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div className="relative overflow-hidden rounded-[2.75rem] border border-white/40 shadow-[0_30px_90px_-55px_rgba(1,68,33,0.45)]">
-                <FullscreenImage src="/tienichdichuyen.jpg" alt="Liên kết tiện ích" className="h-full" />
+                <FullscreenImage
+                  src="/tienichdichuyen.jpg"
+                  alt="Liên kết tiện ích"
+                  className="h-full"
+                  containerClassName="h-full"
+                />
               </div>
 
               <div className="rounded-[2.75rem] border border-luxurybronze/20 bg-white/80 p-6 sm:p-10 shadow-[0_25px_80px_-40px_rgba(96,56,19,0.45)]">
