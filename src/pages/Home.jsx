@@ -5,6 +5,7 @@ import FloorSlider from "../components/FloorSlider";
 import FullscreenImage from "../components/FullscreenImage";
 import FullscreenVideo from "../components/FullscreenVideo";
 import ImageCarousel from "../components/ImageCarousel";
+import SectionWrapper from "../components/SectionWrapper";
 
 const Home = () => {
 
@@ -18,34 +19,38 @@ const Home = () => {
     {
       images: createSlides("maub", 13, "Mẫu căn hộ B"),
       videoUrl: "https://www.youtube.com/embed/p_3ldfGiZH8?enablejsapi=1",
-      caption: "Video thực tế căn hộ góc 2 phòng ngủ 84m² - Conic Boulevard",
+      caption: "Video thực tế căn hộ 2 phòng ngủ 84m² - Conic Boulevard",
+      title: "HÌNH ẢNH THỰC TẾ CĂN HỘ 2 PHÒNG NGỦ 84m² – CONIC BOULEVARD",
     },
     {
       images: createSlides("mauc", 6, "Mẫu căn hộ C1/C2"),
       videoUrl: "https://www.youtube.com/embed/RvNsxklD32w?enablejsapi=1",
-      caption: "Video thực tế căn hộ góc 2 phòng ngủ 85m² - Conic Boulevard",
+      caption: "Video thực tế căn hộ 2 phòng ngủ 85m² - Conic Boulevard",
+      title: "HÌNH ẢNH THỰC TẾ CĂN HỘ 2 PHÒNG NGỦ 85m² – CONIC BOULEVARD",
     },
     {
       images: createSlides("maud", 13, "Mẫu căn hộ D"),
       videoUrl: "https://www.youtube.com/embed/ME0pLer1Kx0?enablejsapi=1",
       caption: "Video thực tế căn hộ góc 2 phòng ngủ 89m² - Conic Boulevard",
+      title: "HÌNH ẢNH THỰC TẾ CĂN HỘ GÓC 2 PHÒNG NGỦ 89m² – CONIC BOULEVARD",
     },
     {
       images: createSlides("maua", 15, "Mẫu căn hộ A"),
       videoUrl: "https://www.youtube.com/embed/pMdQXzUlJRI?enablejsapi=1",
       caption: "Video thực tế căn hộ góc 3 phòng ngủ 114m² - Conic Boulevard",
+      title: "HÌNH ẢNH THỰC TẾ CĂN HỘ GÓC 3 PHÒNG NGỦ 114m² – CONIC BOULEVARD",
     },
   ];
 
   return (
     <>
       <div className="w-full px-2 sm:px-6 lg:px-10">
-        <section id="thongtin" className="max-w-screen-2xl mx-auto sm:pt-10">
+        <SectionWrapper id="thongtin" innerClassName="max-w-screen-2xl mx-auto">
           <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-start">
             {/* Khối bên trái chứa tiêu đề + nội dung */}
             <div className="w-full md:w-2/5 flex flex-col">
               <h2
-                className="text-3xl sm:text-5xl font-bold pb-2 text-lightgreen"
+                className="text-3xl sm:text-5xl font-bold text-lightgreen"
                 style={{
                   fontFamily: "Arial, sans-serif",
                   fontStyle:  "italic"
@@ -53,10 +58,11 @@ const Home = () => {
               >
                 Tổng Quan Dự Án
               </h2>
+              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-luxurybronze/60 md:mx-0" />
 
               <div className="text-sm sm:text-2xl text-lightgreen pt-2">
                 <p>
-                  <strong>TỔNG DIỆN TÍCH: </strong> 
+                  <strong>TỔNG DIỆN TÍCH: </strong>
                   <strong className="text-xl sm:text-3xl">5.3 </strong>
                   <strong>ha</strong>
                 </p>
@@ -101,7 +107,6 @@ const Home = () => {
               <FullscreenImage
                 src="/thongtin.jpg"
                 alt="Thông tin dự án"
-                className="w-full h-auto object-cover rounded-xl shadow-lg"
               />
             </div>
           </div>
@@ -110,23 +115,22 @@ const Home = () => {
             <img
               src="/promotion.jpg"
               alt="Thông tin khuyến mãi"
-              className="w-full h-auto object-cover rounded-xl shadow-lg"
+              className="w-full h-auto object-cover rounded-3xl shadow-[0_25px_80px_-35px_rgba(96,56,19,0.55)] ring-1 ring-luxurybronze/20"
             />
           </div>
 
           <div className="pb-4 md:pb-0">
             <RegisterForm />
           </div>
-        </section>
+        </SectionWrapper>
 
-        <section id="vitri" className="max-w-screen-2xl mx-auto sm:pt-10">
+        <SectionWrapper id="vitri" innerClassName="max-w-screen-2xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
             {/* Hình ảnh bên trái với dòng chữ bên dưới */}
             <div className="w-full md:w-[60%]">
               <FullscreenImage
                 src="/vitri.jpg"
                 alt="Vị trí Conic Boulevard"
-                className="shadow-lg w-full object-cover rounded-xl"
               />
             </div>
 
@@ -135,7 +139,8 @@ const Home = () => {
               <h2 className="text-3xl sm:text-6xl font-bold text-darkgreen font-dancing">
                 Vị Trí
               </h2>
-              <ul className="text-sm sm:text-3xl space-y-5 list-disc pl-9">
+              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-luxurybronze/60 md:mx-0" />
+              <ul className="text-sm sm:text-3xl space-y-5 list-disc pl-9 pt-4">
                 <li>Tọa lạc ngay nút giao Võ Văn Kiệt với Quốc Lộ 1A.</li>
                 <li>Kết nối Quận 5, 6, 1 qua Đại Lộ Võ Văn Kiệt.</li>
                 <li>Kết nối các tỉnh miền tây qua cao tốc Trung Lương, Quốc Lộ 1A.</li>
@@ -147,11 +152,12 @@ const Home = () => {
           <div className="flex flex-col md:flex-row gap-3 md:gap-10 pt-3 md:pt-10 items-center">
             {/* Văn bản bên trái */}
             <div className="w-full md:w-[25%]">
-              <h3 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing md:pb-2">
+              <h3 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">
                 Vị trí chiến lược, <br className="hidden md:inline" />
                 đón đầu tương lai
               </h3>
-              <ul className="list-none text-sm sm:text-2xl text-darkgreen sm:space-y-5">
+              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-luxurybronze/60 md:mx-0" />
+              <ul className="list-none text-sm sm:text-2xl text-darkgreen sm:space-y-5 pt-4">
                 <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
                   Đón đầu quy hoạch Bình Chánh - đầu mối quan trọng kết nối TP. HCM với các tỉnh ĐBSCL
                 </li>
@@ -170,7 +176,7 @@ const Home = () => {
                 <FullscreenImage
                   src="/map.jpg"
                   alt="Vị trí Conic Boulevard"
-                  className="absolute inset-0 w-full h-full object-cover shadow-lg"
+                  className="absolute inset-0 h-full"
                 />
               </div>
             </div>
@@ -182,18 +188,18 @@ const Home = () => {
               className="w-full max-w-5xl aspect-video"
             />
           </div>
-        </section>
+        </SectionWrapper>
 
-        <section id="tienich" className="max-w-screen-2xl mx-auto sm:pt-10">
-          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen pb-1 md:pb-4 font-dancing">
-            Tiện Ích Nội Khu
+        <SectionWrapper id="tienich" innerClassName="max-w-screen-2xl mx-auto">
+          <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">
+            Tiện Ích
           </h2>
+          <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-luxurybronze/60 md:mx-0" />
 
-          <div className="w-full">
+          <div className="w-full pt-4">
             <FullscreenImage
               src="/tienich.jpg"
               alt="Tiện ích nội khu"
-              className="shadow-lg w-full object-cover"
             />
           </div>
 
@@ -211,14 +217,14 @@ const Home = () => {
               <FullscreenImage
                 src="/tienichdichuyen.jpg"
                 alt="Di chuyển đến tiện ích"
-                className="shadow-lg w-full object-cover"
               />
             </div>
             <div className="w-full md:w-[35%]">
-              <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing pb-3 ">
+              <h2 className="text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">
                 Thời gian di chuyển đến các tiện ích trong khu vực.
               </h2>
-              <ul className="list-none ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-2xl">
+              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-luxurybronze/60 md:mx-0" />
+              <ul className="list-none ml-4 list-disc pl-5 space-y-2 text-gray-700 text-sm sm:text-2xl mt-4">
                 <li className="before:content-['✓'] before:mr-2 before:text-darkgreen">
                   5 phút: đến bến xe miền tây
                 </li>
@@ -252,9 +258,9 @@ const Home = () => {
               </ul>
             </div>
           </div>
-        </section>
+        </SectionWrapper>
 
-        <section id="matbang" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
+        <SectionWrapper id="matbang" innerClassName="max-w-screen-2xl mx-auto">
           <h2 className="text-md sm:text-4xl font-bold font-dancing text-darkgreen text-center sm:pt-4 sm:mb-2">
             Mặt Bằng Tầng Điển Hình - Block A
           </h2>
@@ -265,7 +271,7 @@ const Home = () => {
               className="shadow-lg w-full object-cover"
             />
           </div>
-          <h2 className="text-md sm:text-4xl font-bold font-dancing text-darkgreen text-center sm:pt-4 sm:mb-2">
+          <h2 className="text-md sm:text-4xl font-bold font-dancing text-darkgreen text-center sm:pt-8 sm:mb-2">
             Mặt Bằng Tầng Điển Hình -  Block B
           </h2>
           <div className="w-full">
@@ -275,21 +281,15 @@ const Home = () => {
               className="shadow-lg w-full object-cover"
             />
           </div>
-        </section>
+        </SectionWrapper>
 
-        <section id="hinhanh" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
+        <SectionWrapper id="hinhanh" innerClassName="max-w-screen-2xl mx-auto">
           {/* <FloorSlider /> */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen pb-4 sm:pt-6 font-dancing">Hình ảnh thực tế căn hộ</h2>
-          <p className="md:pb-1 text-sm sm:text-2xl">
-            Conic Boulevard thiết lập tiêu chuẩn sống đẳng cấp với những căn hộ diện tích lớn từ 84,32m2 đến 114m2,
-            đáp ứng nhu cầu ngày càng cao về không gian sống rộng, thoáng giữa trung tâm thành phố.
-            Trong bối cảnh “đất chật, người đông”, Conic Boulevard trở thành lựa chọn hiếm hoi mang
-            lại sự thoải mái và tiện nghi cho gia đình nhiều thế hệ.
-          </p>
-          
           <div className="space-y-10 sm:space-y-16">
             {gallerySections.map((section, index) => (
               <div key={section.videoUrl ?? index}>
+                <h2 className="text-3xl sm:text-4xl font-bold text-darkgreen sm:pt-6 font-dancing">{section.title}</h2>
+                <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-luxurybronze/60 md:mx-0 mb-4" />
                 <ImageCarousel images={section.images} />
                 <div className="pt-4 md:pt-16 pb-4 md:pb-0 w-full flex justify-center">
                   <FullscreenVideo
@@ -305,9 +305,9 @@ const Home = () => {
           </div>
           
           <RegisterForm />
-        </section>
+        </SectionWrapper>
 
-        <section id="giaban" className="max-w-screen-2xl mx-auto pt-4 sm:pt-10">
+        <SectionWrapper id="giaban" innerClassName="max-w-screen-2xl mx-auto">
           <h2 className="text-center text-3xl sm:text-5xl font-bold text-darkgreen font-dancing">GIÁ BÁN CĂN HỘ CONIC BOULEVARD</h2>
 
           <div className="sm:mt-5 grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-10 justify-items-center">
@@ -390,7 +390,7 @@ const Home = () => {
                 </div>
                 <div className="mt-4 bg-white text-center text-[#a8844e] font-bold text-sm py-3 rounded-md">
                   <p className="mb-1">GIÁ BÁN: 3,3 tỷ VNĐ (giao nhà thô)</p>
-                  <p className="mt-0">3,15 tỷ VNĐ (giao nhà hoàn thiện)</p>
+                  <p className="mt-0">3,8 tỷ VNĐ (giao nhà hoàn thiện)</p>
                 </div>
               </div>
             </div>
@@ -409,7 +409,7 @@ const Home = () => {
                   <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-darkgreen text-white text-lg font-semibold">1</span>
                   <div className="text-sm sm:text-lg text-[#603813]">
                     <p className="font-semibold">5 tỷ</p>
-                    <p className="text-gray-600">Mặt tiền đường số 1 lộ giới 16m</p>
+                    <p className="text-gray-600">Mặt tiền đường số 1 lộ giới 18m</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 bg-white/80 backdrop-blur rounded-2xl p-4 shadow-md">
@@ -422,7 +422,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </SectionWrapper>
 
         <EndingRegisterForm />
         {/* Nút Zalo */}

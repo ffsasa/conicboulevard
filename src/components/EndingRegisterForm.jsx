@@ -43,7 +43,7 @@ export default function RegisterForm() {
   return (
     <section
       id="dangky2"
-      className="relative overflow-hidden bg-gradient-to-br from-[#0d5e2b] via-[#1aa250] to-[#7ede91] py-14"
+      className="relative overflow-hidden bg-gradient-to-br from-[#0d5e2b] via-[#1aa250] to-[#7ede91] py-14 font-body"
     >
       {/* Phần ảnh */}
       <div className="pointer-events-none absolute inset-0">
