@@ -441,7 +441,7 @@ const Home = () => {
                             <Icon className="text-2xl" />
                           </span>
                           <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">{card.subtitle}</p>
+                            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-emerald-700">{card.subtitle}</p>
                             <h3 className="text-lg font-semibold text-darkgreen sm:text-xl">{card.title}</h3>
                           </div>
                         </header>
@@ -459,7 +459,7 @@ const Home = () => {
                               className={`${index > 0 ? "mt-3 border-t border-dashed border-luxurybronze/30 pt-3" : ""} flex items-baseline justify-between gap-3`}
                             >
                               <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500">{price.label}</span>
-                              <span className="text-2xl font-heading text-darkgreen">{price.value}</span>
+                              <span className="text-xl font-heading text-darkgreen">{price.value}</span>
                             </div>
                           ))}
                         </div>

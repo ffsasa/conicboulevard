@@ -56,23 +56,32 @@ const FullscreenVideo = ({ videoUrl, className = "" }) => {
     : `${videoUrl}${videoUrl.includes("?") ? "&" : "?"}enablejsapi=1`;
 
   return (
-    <div ref={containerRef} className={`${className} relative`}>
-      <iframe
-        ref={iframeRef}
-        src={src}
-        className="w-full h-full rounded-xl shadow-lg"
-        title="Video"
-        frameBorder="0"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowFullScreen
-      />
-      {/* Lớp overlay bắt click lần đầu */}
-      {overlayVisible && (
-        <div
-          onClick={handleOverlayClick}
-          className="absolute inset-0 cursor-pointer bg-transparent"
+    <div
+      ref={containerRef}
+      className={`relative ${isFullscreen ? "h-full w-full max-w-none" : ""} ${className}`}
+    >
+      <div
+        className={`relative w-full ${isFullscreen ? "h-full" : "pt-[56.25%]"}`}
+      >
+        <iframe
+          ref={iframeRef}
+          src={src}
+          className={`absolute inset-0 h-full w-full ${
+            isFullscreen ? "" : "rounded-xl shadow-lg"
+          }`}
+          title="Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
         />
-      )}
+      {/* Lớp overlay bắt click lần đầu */}
+        {overlayVisible && (
+          <div
+            onClick={handleOverlayClick}
+            className="absolute inset-0 cursor-pointer bg-transparent"
+          />
+        )}
+      </div>
       {/* Nút ✕ chỉ hiện khi đang fullscreen */}
       {isFullscreen && (
         <button
