@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 const FullscreenImage = ({ src, alt, className = "" }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -26,9 +27,40 @@ const FullscreenImage = ({ src, alt, className = "" }) => {
     }
   };
 
+  useEffect(() => {
+    if (!isFullscreen || typeof document === "undefined") {
+      return undefined;
+    }
+
+    const { style } = document.body;
+    const originalOverflow = style.overflow;
+    style.overflow = "hidden";
+
+    return () => {
+      style.overflow = originalOverflow;
+    };
+  }, [isFullscreen]);
+
   const closeFullscreen = () => {
     setIsFullscreen(false);
   };
+
+  const fullscreenContent = (
+    <div className="fixed inset-0 bg-black bg-opacity-90 z-[9999] flex items-center justify-center">
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-full max-h-full object-contain"
+      />
+      <button
+        onClick={closeFullscreen}
+        className="absolute top-4 right-4 z-[10000] bg-white text-black text-2xl px-3 py-1 rounded-full shadow-lg"
+        type="button"
+      >
+        ✕
+      </button>
+    </div>
+  );
 
   return (
     <>
@@ -45,21 +77,7 @@ const FullscreenImage = ({ src, alt, className = "" }) => {
           className={`block w-full cursor-pointer overflow-hidden rounded-3xl shadow-[0_25px_80px_-35px_rgba(96,56,19,0.55)] ring-1 ring-luxurybronze/20 transition-all duration-500 ease-out hover:scale-[1.015] hover:shadow-[0_40px_120px_-45px_rgba(96,56,19,0.6)] bg-white/60 object-cover ${className}`}        />
       </button>
 
-      {isFullscreen && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-[9998] flex items-center justify-center">
-          <img
-            src={src}
-            alt={alt}
-            className="max-w-full max-h-full object-contain"
-          />
-          <button
-            onClick={closeFullscreen}
-            className="absolute top-4 right-4 z-[9999] bg-white text-black text-2xl px-3 py-1 rounded-full shadow-lg"
-          >
-            ✕
-          </button>
-        </div>
-      )}
+      {isFullscreen && createPortal(fullscreenContent, document.body)}
     </>
   );
 };
