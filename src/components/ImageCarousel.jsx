@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -6,6 +7,17 @@ import "swiper/css/pagination";
 
 const ImageCarousel = ({ images, className = "" }) => {
   const [activeImage, setActiveImage] = useState(null);
+
+  useEffect(() => {
+    if (!activeImage) return undefined;
+
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = overflow;
+    };
+  }, [activeImage]);
 
   return (
     <div className="relative w-full">
@@ -34,23 +46,27 @@ const ImageCarousel = ({ images, className = "" }) => {
         ))}
       </Swiper>
 
-      {activeImage && (
-        <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center">
-          <button
-            type="button"
-            onClick={() => setActiveImage(null)}
-            className="fixed top-4 right-4 z-[10000] bg-white text-black text-3xl p-2 rounded-full shadow-lg"
-          >
-            ✕
-          </button>
+      {activeImage &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div className="fixed inset-0 z-[10000] bg-black/90 flex items-center justify-center p-4">
+            <button
+              type="button"
+              onClick={() => setActiveImage(null)}
+              className="absolute top-4 right-4 bg-white text-black text-3xl p-2 rounded-full shadow-lg"
+              aria-label="Đóng hình ảnh"
+            >
+              ✕
+            </button>
 
-          <img
-            src={activeImage.src}
-            alt={activeImage.alt ?? "Expanded image"}
-            className="max-w-full max-h-full object-contain"
-          />
-        </div>
-      )}
+            <img
+              src={activeImage.src}
+              alt={activeImage.alt ?? "Expanded image"}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>,
+          document.body,
+        )}
     </div>
   );
 };
