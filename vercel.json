@@ -1,1 +1,28 @@
-{}
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "conicboulevard.info" }
+      ],
+      "destination": "https://www.conicboulevard.info/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "conicboulevardv2.vercel.app" }
+      ],
+      "destination": "https://www.conicboulevard.info/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "conicboulevard.pro.vn" }
+      ],
+      "destination": "https://www.conicboulevard.info/$1",
+      "permanent": true
+    }
+  ]
+}
