@@ -51,6 +51,8 @@ const FullscreenImage = ({ src, alt, className = "", containerClassName = "" }) 
         src={src}
         alt={alt}
         className="max-w-full max-h-full object-contain"
+        loading="lazy"
+        decoding="async"
       />
       <button
         onClick={closeFullscreen}
@@ -74,7 +76,10 @@ const FullscreenImage = ({ src, alt, className = "", containerClassName = "" }) 
         <img
           src={src}
           alt={alt}
-          className={`block w-full cursor-pointer overflow-hidden rounded-3xl shadow-[0_25px_80px_-35px_rgba(96,56,19,0.55)] ring-1 ring-luxurybronze/20 transition-all duration-500 ease-out hover:scale-[1.015] hover:shadow-[0_40px_120px_-45px_rgba(96,56,19,0.6)] bg-white/60 object-cover ${className}`}        />
+          className={`block w-full cursor-pointer overflow-hidden rounded-3xl shadow-[0_25px_80px_-35px_rgba(96,56,19,0.55)] ring-1 ring-luxurybronze/20 transition-all duration-500 ease-out hover:scale-[1.015] hover:shadow-[0_40px_120px_-45px_rgba(96,56,19,0.6)] bg-white/60 object-cover ${className}`}
+          loading="lazy"
+          decoding="async"
+        />
       </button>
 
       {isFullscreen && createPortal(fullscreenContent, document.body)}

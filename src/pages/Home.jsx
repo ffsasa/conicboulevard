@@ -252,6 +252,8 @@ const Home = () => {
                 src="/promotion.jpg"
                 alt="Thông tin khuyến mãi"
                 className="w-full rounded-[2.75rem] border border-white/50 object-cover shadow-[0_40px_110px_-60px_rgba(96,56,19,0.65)]"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -452,7 +454,13 @@ const Home = () => {
                       className="group relative flex w-full flex-col rounded-3xl border border-luxurybronze/40 bg-gradient-to-br from-white via-white to-emerald-50/70 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-luxurybronze/70 hover:shadow-2xl"
                     >
                       <div className="relative overflow-hidden rounded-2xl">
-                        <img src={card.image} alt={card.title} className="h-48 w-full rounded-2xl object-cover sm:h-56" />
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="h-48 w-full rounded-2xl object-cover sm:h-56"
+                          loading="lazy"
+                          decoding="async"
+                        />
                       </div>
 
                       <div className="mt-5 flex flex-1 flex-col gap-5">
@@ -530,12 +538,20 @@ const Home = () => {
             src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
             alt="Zalo"
             className="w-12 h-12 md:w-14 md:h-14 rounded-md shadow-lg transition-transform duration-300 animate-shake"
+            loading="lazy"
+            decoding="async"
           />
         </a>
 
         {/* Nút Gọi điện */}
         <a href="tel:0941841024" className="fixed bottom-5 right-4 md:bottom-5 md:right-6 z-50">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="Call" className="w-12 h-12 md:w-14 md:h-14 animate-shake" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+            alt="Call"
+            className="w-12 h-12 md:w-14 md:h-14 animate-shake"
+            loading="lazy"
+            decoding="async"
+          />
         </a>
       </div>
     </>

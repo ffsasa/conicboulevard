@@ -49,6 +49,8 @@ export default function FloorSlider() {
               src={plan.src}
               alt={plan.alt}
               className="w-full h-auto object-cover cursor-zoom-in"
+              loading="lazy"
+              decoding="async"
               onClick={() => setSelectedSrc(plan.src)}
             />
           </SwiperSlide>
@@ -75,6 +77,8 @@ export default function FloorSlider() {
             src={selectedSrc}
             alt="Expanded floor plan"
             className="max-w-full max-h-full object-contain"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       )}

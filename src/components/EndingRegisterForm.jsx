@@ -62,6 +62,8 @@ export default function RegisterForm() {
             src="/promotion2.jpg"
             alt="Phối cảnh dự án Conic Boulevard"
             className="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10" />
         </div>

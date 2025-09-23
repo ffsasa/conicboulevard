@@ -39,6 +39,8 @@ const ImageCarousel = ({ images, className = "" }) => {
                 src={image.src}
                 alt={image.alt ?? `Slide image ${index + 1}`}
                 className="absolute inset-0 w-full h-full object-cover cursor-zoom-in"
+                loading="lazy"
+                decoding="async"
                 onClick={() => setActiveImage(image)}
               />
             </div>
@@ -63,6 +65,8 @@ const ImageCarousel = ({ images, className = "" }) => {
               src={activeImage.src}
               alt={activeImage.alt ?? "Expanded image"}
               className="max-w-full max-h-full object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </div>,
           document.body,

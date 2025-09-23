@@ -15,7 +15,13 @@ const Footer = () => {
                 Phòng kinh doanh dự án
               </h2>
             </div>
-            <img src={logo} alt="Logo" className="h-auto w-1/2 object-cover mx-auto" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-auto w-1/2 object-cover mx-auto"
+              loading="lazy"
+              decoding="async"
+            />
             <ul className="space-y-3 text-base font-medium leading-relaxed md:text-lg">
               <li>
                 <span className="font-semibold text-green-700">Địa chỉ dự án:</span> Khu Căn Hộ Conic Boulevard, Đường Huỳnh Bá Chánh, Tân Kiên, Bình Chánh, TP.HCM.
