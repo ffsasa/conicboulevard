@@ -35,11 +35,11 @@ const ImageCarousel = ({ images, className = "" }) => {
       </Swiper>
 
       {activeImage && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+        <div className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center">
           <button
             type="button"
             onClick={() => setActiveImage(null)}
-            className="fixed top-4 right-4 z-50 bg-white text-black text-3xl p-2 rounded-full shadow-lg"
+            className="fixed top-4 right-4 z-[10000] bg-white text-black text-3xl p-2 rounded-full shadow-lg"
           >
             ✕
           </button>
