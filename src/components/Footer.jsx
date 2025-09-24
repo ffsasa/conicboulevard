@@ -30,6 +30,9 @@ const Footer = () => {
                 <span className="font-semibold text-green-700">Địa chỉ Phòng giao dịch:</span> Lô 13B, KDC Conic, Nguyễn Văn Linh, Xã Phong Phú, Bình Chánh, TP.HCM.
               </li>
               <li>
+                <span className="font-semibold text-green-700">Email:</span> cuongcoach6879@gmail.com
+              </li>
+              <li>
                 <span className="font-semibold text-green-700">Hotline/Zalo:</span>{' '}
                 <a
                   href="tel:0941841024"
@@ -71,11 +74,22 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="mt-10 text-center text-sm text-green-800">
-          <Link to="/privacy-policy" className="underline transition hover:text-green-900">
-            Chính sách bảo mật
-          </Link>
-        </p>
+        <div className="mt-10 border-t border-green-200 pt-6 text-center text-sm text-green-800 space-y-2">
+          <p>
+            © 2025 <span className="font-semibold text-green-700">ConicBoulevard</span>. All rights reserved.
+          </p>
+          <p>
+            <span className="font-medium">Đơn vị phát triển:</span> An Tạ Ngọc (ffsasa)
+          </p>
+          <p>
+            <Link 
+              to="/privacy-policy" 
+              className="underline hover:text-green-900 transition"
+            >
+              Chính sách bảo mật
+            </Link>
+          </p>
+        </div>
       </section>
     </footer>
   );
