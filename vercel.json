@@ -7,14 +7,6 @@
       ],
       "destination": "https://www.conicboulevard.info/$1",
       "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "conicboulevardv2.vercel.app" }
-      ],
-      "destination": "https://www.conicboulevard.info/$1",
-      "permanent": true
     }
   ]
 }
