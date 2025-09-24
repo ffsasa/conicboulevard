@@ -80,6 +80,22 @@ export default function RegisterForm() {
 
           <input name="projectName" type="hidden" value={"Conic Boulevard"} />
 
+          <div className="w-full rounded-2xl bg-opacity-50 px-4 py-3 text-left">
+            <label className="flex items-start gap-3 text-sm text-green-800">
+              <input
+                type="checkbox"
+                name="consentToSubmit"
+                value="agree"
+                required
+                className="mt-1 h-4 w-4 rounded border-green-500 text-green-700 focus:ring-green-600"
+              />
+              <span>
+                Tôi đồng ý gửi thông tin của mình để được tư vấn và nhận liên hệ từ
+                Conic Boulevard.
+              </span>
+            </label>
+          </div>
+          
           <button
             type="submit"
             className="mt-6 px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-full inline-flex items-center gap-2 transition-all animate-pulseScale"
