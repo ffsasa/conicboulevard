@@ -11,7 +11,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!sitemap\\.xml|robots\\.txt|.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|json|webp)).*)",
+      "source": "/:path*",
       "has": [
         { "type": "header", "key": "accept", "value": ".*text/html.*" }
       ],
