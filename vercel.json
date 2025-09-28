@@ -9,11 +9,13 @@
       "permanent": true
     }
   ],
-  "routes": [
-    { "handle": "filesystem" },
+  "rewrites": [
     {
-      "src": "/.*",
-      "dest": "/index.html"
+      "source": "/((?!sitemap\\.xml|robots\\.txt|.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|json|webp)).*)",
+      "has": [
+        { "type": "header", "key": "accept", "value": ".*text/html.*" }
+      ],
+      "destination": "/index.html"
     }
   ]
 }
