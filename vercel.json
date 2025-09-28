@@ -9,13 +9,11 @@
       "permanent": true
     }
   ],
-  "rewrites": [
+  "routes": [
+    { "handle": "filesystem" },
     {
-      "source": "/(.*)",
-      "missing": [
-        { "type": "filesystem" }
-      ],
-      "destination": "/index.html"
+      "src": "/.*",
+      "dest": "/index.html"
     }
   ]
 }
