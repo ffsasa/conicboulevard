@@ -4,13 +4,13 @@ const Hero = () => {
       <picture className="pointer-events-none absolute inset-0 block h-full w-full">
         <source media="(min-width: 1024px)" srcSet="/hero.jpg" />
         <img
-          src="/hero-mobile.jpg"
+          src="/hero.jpg"
           alt="Phối cảnh tổng quan dự án Conic Boulevard"
           className="h-full w-full object-cover"
           fetchpriority="high"
           decoding="async"
           sizes="100vw"
-          srcSet="/hero-mobile.jpg 960w, /hero.jpg 1920w"
+          srcSet="/hero.jpg 960w, /hero.jpg 1920w"
         />
       </picture>
 
