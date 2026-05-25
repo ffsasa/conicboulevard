@@ -87,13 +87,3 @@ Toàn bộ ảnh minh họa/ảnh dự án được đặt trong thư mục `pub
 ## Triển khai
 
 Repo có file `vercel.json`, phù hợp để triển khai nhanh trên Vercel.
-
-## Gợi ý cải tiến tiếp theo
-
-- Tách cấu hình API URL qua biến môi trường (`.env`).
-- Bổ sung validate form nâng cao và chống spam.
-- Thêm tracking chuyển đổi (GA4/Meta Pixel) cho chiến dịch quảng cáo.
-- Tối ưu SEO nâng cao: schema bất động sản, Open Graph chi tiết từng section.
-
-1. **README bản ngắn gọn cho team kinh doanh** (non-technical)
-2. **README bản kỹ thuật sâu hơn** (kiến trúc component, convention, flow dữ liệu)
